@@ -155,7 +155,7 @@ ol.steps li::before {
   background: var(--panel); border: 1px solid var(--border); display: grid; place-items: center;
   font-family: var(--mono); font-size: 12px; color: var(--accent);
 }
-ol.steps li b { display: block; color: var(--text); }
+ol.steps li > b { display: block; color: var(--text); }
 ol.steps li p { margin: 2px 0 0; color: var(--dim); font-size: 13.5px; }
 
 /* faq */
