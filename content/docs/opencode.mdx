@@ -1,0 +1,21 @@
+---
+title: OpenCode
+description: How ROXY drives OpenCode as its agent runtime.
+---
+
+OpenCode is the agent runtime ROXY drives. Install it once; API-model turns can
+then run through it.
+
+- ROXY passes a per-turn provider definition to OpenCode's inline config.
+- The API key is supplied only to that child process — your saved OpenCode auth
+  files are untouched.
+- If OpenCode is not installed, ROXY falls back to its own OpenAI-compatible
+  HTTP client.
+- Models reported by `opencode models` appear in the picker with their
+  `provider/model` ids.
+
+:::note[Sign-in is separate]
+OpenCode provider sign-in (for example ChatGPT) is an interactive step in your
+terminal. ROXY opens it for you and then refreshes the model list.
+:::
+EOF

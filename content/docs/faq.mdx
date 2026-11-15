@@ -1,0 +1,32 @@
+---
+title: FAQ
+description: Frequently asked questions about ROXY.
+---
+
+## Does ROXY store my conversations in the cloud?
+
+No. Sessions are JSON files in your local data folder. The only network traffic
+is to the providers you configured.
+
+## Can I use ROXY entirely offline?
+
+The UI and catalogue work offline. Model calls need either a local server
+(9Router, Ollama-style endpoints) or a reachable provider.
+
+## How do I remove an agent CLI?
+
+**Models → CLI agents → open the agent → Uninstall**. It only removes ROXY's
+managed copy.
+
+## Why is there no “Auto” model?
+
+Auto hides which model answered. ROXY shows every route explicitly; automatic
+behaviour belongs to the 9Router priority list, where you can see and edit the
+order.
+
+## Where do I report a bug?
+
+[github.com/RoaraxAli/ROXY/issues](https://github.com/RoaraxAli/ROXY/issues) —
+include your OS, ROXY version from **Settings → About**, and the steps to
+reproduce.
+EOF

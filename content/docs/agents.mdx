@@ -1,0 +1,35 @@
+---
+title: Agent CLIs
+description: Install, detect, update and drive agent CLIs headlessly from inside ROXY.
+---
+
+ROXY can install, detect, update and drive agent CLIs headlessly. Each one lives
+in ROXY's own tools folder — nothing is added to your `PATH`.
+
+| Agent | Package | Notes |
+|---|---|---|
+| Codex CLI | `@openai/codex` | Streams structured events; edits files in your working folder. |
+| Claude Code | `@anthropic-ai/claude-code` | Strong on long files and careful refactors. |
+| Gemini CLI | `@google/gemini-cli` | Generous free tier, million-token window. |
+| OpenCode | `@opencode/cli` | Provider-agnostic runtime; also ROXY's API engine when installed. |
+| Qwen Code | `@qwen-code/qwen-code` | Long context, daily free quota. |
+| Copilot CLI | `@github/copilot` | Uses an existing Copilot subscription. |
+| Amp | `@sourcegraph/amp` | High-throughput, good for wide edits. |
+| Crush | `@charmland/crush` | Bring any provider key. |
+| Grok CLI | `@vibe-kit/grok-cli` | Needs `GROK_API_KEY` or a login. |
+
+## Requirements
+
+Install requires Node.js. If Node is missing, ROXY offers the download page
+instead of failing silently.
+
+## Sign-in
+
+**Sign in** opens your own terminal for the CLI's login command. ROXY never sees
+those credentials.
+
+## Uninstall
+
+**Models → CLI agents → open the agent → Uninstall** removes only ROXY's
+managed copy.
+EOF

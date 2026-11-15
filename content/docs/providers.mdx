@@ -1,0 +1,28 @@
+---
+title: Providers
+description: Add an OpenAI-compatible provider, paste a key, and refresh its model list.
+---
+
+Open **Models → API models**. The catalogue ships offline, so it works without a
+network call.
+
+1. **Pick a provider card** — search the catalogue, or use “Any other
+   OpenAI-compatible endpoint” for a private gateway.
+2. **Paste a key** — stored in `config.json` on your machine. You can also
+   leave it blank and rely on the provider's environment variable.
+3. **Refresh models** — ROXY calls the provider's `/models` endpoint and fills
+   the picker. If the provider does not implement it, type the model id manually.
+4. **Choose a default model** — select it in the card, then use the composer
+   picker per session.
+
+:::note[Local endpoints need no key]
+Anything on `127.0.0.1`, `localhost`, or `[::1]` is treated as trusted-local and
+shown as `local`.
+:::
+
+## What gets stored
+
+- Provider id, name, base URL, key, default model, enabled state, colour.
+- The 9Router card also stores a `priority` list — the ranked model order used
+  by the picker and by automatic fallback.
+EOF

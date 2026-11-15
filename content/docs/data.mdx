@@ -1,0 +1,23 @@
+---
+title: Data and privacy
+description: Where ROXY stores your data and what it sends over the network.
+---
+
+| OS | Folder |
+|---|---|
+| Linux | `~/.config/roxy/` |
+| Windows | `%APPDATA%\roxy\` |
+
+Files:
+
+- `config.json` — providers, keys, accent, behaviour.
+- `sessions.json` — every transcript.
+- `roxy.log` — one line per completed turn (provider, model, duration, size).
+
+## Privacy
+
+No telemetry, no analytics, no ROXY account. Delete the folder for a clean
+slate. Keys are stored in plain text on your disk; protect the folder like any
+other credential store. The only network traffic is to the providers you
+configured.
+EOF

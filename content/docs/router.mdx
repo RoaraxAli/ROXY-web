@@ -1,0 +1,37 @@
+---
+title: 9Router and model priority
+description: Rank models once; ROXY walks that order and falls through automatically.
+---
+
+9Router is a local router exposing many providers behind one endpoint. ROXY adds
+the part it cannot know: **your** ranking.
+
+## The endpoint
+
+ROXY talks to `http://localhost:20128/v1` and reads models from `/v1/models`.
+The dashboard lives at `http://localhost:20128`.
+
+## Setup
+
+1. **Install** — **Models → API models → 9Router card → Install** (npm
+   package `9router`). Requires Node.js.
+2. **Start the server** — press **Start server**, or run `9router` yourself.
+   The card switches to `online` after a refresh.
+3. **Add providers** — in the 9Router dashboard, connect the accounts you want
+   it to route across.
+4. **Rank models** — back in ROXY, press **Refresh**, then order the models
+   with ↑ / ↓.
+
+## What ranking does
+
+Each turn tries your selected model first, then the rest of the ranking in
+order. If a request fails — connection error, HTTP error, or a provider error
+frame — **before any text has streamed**, ROXY silently retries the next model
+in the list. Once tokens have started, the reply is left alone and the error is
+shown instead of switching mid-answer.
+
+:::note[Ranking is stored, not guessed]
+The order lives in `config.json` under the provider's `priority` list and is used
+identically by the picker and the fallback loop.
+:::
+EOF

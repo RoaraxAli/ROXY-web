@@ -1,0 +1,20 @@
+---
+title: Concepts
+description: Sessions, providers, and routes — the three words that cover most of ROXY.
+---
+
+Three words cover most of the app.
+
+| Term | What it means |
+|---|---|
+| **Session** | One conversation. It stores every message, the provider and model that answered each turn, and token counts. |
+| **Provider** | A source of models: an OpenAI-compatible API, a local agent CLI, or the 9Router endpoint. Providers are what the picker lists. |
+| **Route** | The provider + model currently answering. Changing the route never edits the transcript. |
+
+## Switching models mid-thread
+
+When you switch models, ROXY inserts a small handoff marker in the transcript
+and replays the full user/assistant history to the new model. Nothing is
+summarised or dropped. The marker is carried into the transcript but never sent
+to a model.
+EOF

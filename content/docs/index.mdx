@@ -1,0 +1,42 @@
+---
+title: ROXY documentation
+description: One session, every model — documentation for the ROXY desktop AI client.
+---
+
+ROXY is a native Rust desktop client that keeps **one conversation** across every
+model you have access to: hosted APIs, local agent CLIs, OpenCode, and a
+9Router priority fallback. Switch models mid-thread and the transcript follows
+you.
+
+## What ROXY is
+
+- **One session.** Every message, the provider and model that answered it, and
+  token counts live in a single transcript.
+- **Every model.** 40+ OpenAI-compatible providers from a built-in catalogue,
+  plus nine installable agent CLIs, plus a local 9Router route.
+- **No backend.** ROXY has no account, no telemetry, no cloud. Requests go
+  straight to the endpoint you configured, or to a router on your own machine.
+
+## Where to start
+
+1. [Install ROXY](/install/) — Windows x64 or Linux ARM64, one executable.
+2. [Connect a model](/providers/) — paste a key or install an agent CLI.
+3. [Switch models mid-thread](/sessions/) — the transcript carries over.
+
+## How it is built
+
+ROXY is written in Rust with egui/eframe. The binary is ~8 MB on Linux and
+~6.6 MB on Windows, ships as a single file with no installer and no runtime,
+and draws its UI on the GPU. The release binaries are currently **unsigned**,
+which is why Windows shows “unknown publisher”; see
+[Install → troubleshooting](/install/#windows-protected-your-pc-unknown-publisher).
+
+## Engines
+
+ROXY is **built on OpenCode and 9Router**:
+
+- **OpenCode** is the agent runtime ROXY drives headlessly for hosted API turns.
+- **9Router** is a local router on `localhost:20128` that exposes many providers
+  behind one endpoint. ROXY reads its model list and lets you rank it, so a
+  rate-limited provider never kills a turn.
+EOF

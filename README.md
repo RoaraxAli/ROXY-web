@@ -1,58 +1,30 @@
-# ROXY-web
+# ROXY Web
 
-Static marketing and documentation site for [ROXY](https://github.com/RoaraxAli/ROXY),
-a native Rust desktop AI client.
+Marketing site and documentation for [ROXY](https://github.com/RoaraxAli/ROXY),
+built with [Next.js](https://nextjs.org) and [Nextra](https://nextra.site).
 
-## Pages
+## Structure
 
-| File | Purpose |
-|------|---------|
-| `index.html` | Landing page: positioning, screenshots, stack overview, FAQ |
-| `install.html` | Platform downloads, step-by-step install, checksum verification, troubleshooting, source build |
-| `docs.html` | Concepts, providers, agent CLIs, OpenCode, 9Router priority routing, sessions, settings, data, shortcuts |
-| `assets/styles.css` | Shared design system (dark, lime accent, system fonts only) |
-| `assets/logo.svg` | Brand mark |
+- `app/(marketing)/` — landing page and install guide (custom layout).
+- `app/docs/` — documentation (Nextra theme-docs, MDX in `content/docs/`).
+- `content/docs/` — MDX content pages.
 
-No build step, no framework, no external fonts or scripts. Open `index.html`
-directly or serve the folder with any static host.
-
-## Running locally
+## Develop
 
 ```bash
-python3 -m http.server 8080
-# → http://localhost:8080
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm run start
 ```
 
-## Deploying
+## Deploy
 
-Any static host works: GitHub Pages, Cloudflare Pages, Netlify, Vercel, S3, or
-nginx. The site has no absolute hostnames — links between pages are relative, so
-it can live at a domain root or in a subfolder.
+Connected to Vercel — every push to `main` deploys automatically. No
+`vercel.json` is required; Vercel detects Next.js.
 
-For GitHub Pages: repository → Settings → Pages → deploy from branch `main`,
-folder `/` (root).
+## Adding a doc page
 
-## Download links
-
-`install.html` points at GitHub Releases:
-
-```
-https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-windows-x64.zip
-https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy.exe
-https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-linux
-```
-
-These resolve to the assets attached to the newest release of the ROXY
-repository. Upload those three files (plus `SHA256SUMS.txt`) with every release.
-
-## Keeping it current
-
-When a release ships:
-
-1. Update the version string on `index.html` and `install.html`.
-2. Add the SHA-256 values to the release notes (the page links to them).
-3. Update the `docs.html` table if the agent CLI list changed.
-
-## License
-
-MIT — see [LICENSE](LICENSE).
+1. Create `content/docs/<slug>.mdx` with frontmatter `title` and `description`.
+2. Add an entry to the sidebar in `app/docs/layout.tsx` (or `theme.config`).
+3. Push to `main`.

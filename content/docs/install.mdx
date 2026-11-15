@@ -1,0 +1,140 @@
+---
+title: Install
+description: Download ROXY for Windows x64 or Linux ARM64, verify the checksum, and connect your first model.
+---
+
+
+## Downloads
+
+ROXY ships as a single executable. No installer, no runtime, no admin rights.
+
+| Platform | File |
+|---|---|
+| Windows 10/11 x64 | `roxy-windows-x64.zip` (contains `roxy.exe`) or `roxy.exe` |
+| Linux ARM64 | `roxy-linux` |
+
+All files come from the [latest GitHub release](https://github.com/RoaraxAli/ROXY/releases/latest).
+
+## Windows
+
+1. Download the ZIP from the release page.
+2. Extract it — running ROXY from inside the ZIP will not work.
+3. (Optional) Clear the “downloaded from the internet” block so SmartScreen does not prompt:
+   ```powershell
+   Unblock-File .\roxy.exe
+   ```
+4. Move `roxy.exe` somewhere permanent and writable, e.g. `%LOCALAPPDATA%\Programs\ROXY\`.
+5. Run `roxy.exe`.
+6. If SmartScreen still appears: **More info → Run anyway**.
+7. Open **Models → API models** and connect a provider, or install an agent CLI.
+
+:::caution[Windows protected your PC — unknown publisher]
+ROXY builds are not Authenticode-signed yet, so Windows has no publisher to
+display and treats the file as unrecognized. That message is about *identity*,
+not detection. Click **More info → Run anyway**, or run `Unblock-File` first.
+Every release publishes SHA-256 checksums so you can confirm the file.
+:::
+
+**Data location:** `%APPDATA%\roxy\` (`config.json`, `sessions.json`, `roxy.log`).
+
+## Linux
+
+```bash
+curl -fL -o roxy https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-linux
+chmod +x roxy
+mkdir -p ~/.local/bin && mv roxy ~/.local/bin/roxy
+roxy
+```
+
+**Data location:** `~/.config/roxy/`.
+
+:::note
+Linux builds are ARM64. For x86_64 Linux, build from source — see
+[Build from source](#build-from-source).
+:::
+
+## Verify a download
+
+PowerShell:
+```powershell
+Get-FileHash .\roxy-windows-x64.zip -Algorithm SHA256
+```
+
+Linux:
+```bash
+sha256sum roxy-linux
+```
+
+Compare with the value in `SHA256SUMS.txt` on the release page. If they differ,
+do not run the file — download it again.
+
+## First run
+
+The loader checks your machine, restores sessions, and looks for update and
+gateway state. Then you land in a chat with one empty session.
+
+1. **Connect a model** — **Models → API models** for a key-based provider, or
+   **Models → CLI agents** to install Codex, Claude Code, Gemini CLI and friends.
+2. **Pick it in the composer** — the model button above the message box opens a
+   searchable picker grouped by provider.
+3. **Switch whenever** — pick another model mid-thread. The transcript is
+   replayed, so context carries over.
+
+:::tip[ChatGPT / Codex sign-in]
+Some agents need an interactive login. ROXY opens **your own terminal** for that
+command and never asks for your CLI password.
+:::
+
+## Updating
+
+ROXY checks for a new release at launch. If one exists, a window appears with a
+live progress bar: it downloads, swaps the binary after ROXY closes, and
+restarts. No terminal window, no manual download.
+
+- Manual check: **Settings → About → Check for updates**.
+- Requires `curl` (built into Windows 10+, present on Linux) and write access
+  to ROXY's folder. Keep `roxy.exe` somewhere writable, not `Program Files`.
+
+## Troubleshooting
+
+- **The window does not open.** On Linux, make sure you are in a graphical
+  session with an OpenGL driver. Running from a terminal shows the exact error.
+  On Windows, extract the ZIP before running.
+- **“Needs Node.js” when installing an agent.** Agent CLIs and 9Router are npm
+  packages. Install Node.js LTS, restart ROXY, then press Install again.
+- **Models list is empty for a provider.** Press **Refresh** in Models. For a
+  local server, confirm it is running — 9Router listens on `localhost:20128`.
+  A key-based provider needs a valid key before its `/models` endpoint answers.
+- **The update downloads but nothing changes.** The updater needs write access
+  to the folder holding the executable. Move ROXY out of a read-only location
+  and retry from **Settings → About**.
+- **Antivirus flags roxy.exe.** Reputation warnings are common for new unsigned
+  binaries. Verify the checksum; if you would rather compile it yourself, the
+  source and build steps are below.
+
+## Build from source
+
+Rust 1.80+ and a C toolchain. The Windows cross-build additionally needs
+`gcc-mingw-w64-x86-64`.
+
+```bash
+git clone https://github.com/RoaraxAli/ROXY.git
+cd ROXY
+
+# native build (Linux x86_64 / ARM64)
+cargo build --release
+./target/release/roxy
+
+# Windows x64 cross-compile from Linux
+rustup target add x86_64-pc-windows-gnu
+cargo build --release --target x86_64-pc-windows-gnu
+```
+
+`build-windows.sh` builds both binaries, zips the Windows one, and writes
+`SHA256SUMS.txt`. A self-hosted build can point the updater at its own
+manifest at compile time:
+
+```bash
+ROXY_MANIFEST="https://example.com/roxy/update.json" cargo build --release
+```
+EOF
