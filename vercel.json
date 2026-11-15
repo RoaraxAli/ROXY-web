@@ -26,7 +26,7 @@
       "destination": "/docs/install"
     },
     {
-      "source": "/:path((?!_next|docs|install|favicon.ico).*)",
+      "source": "/:path((?!_next|docs|install|favicon.ico|host-debug).*)",
       "has": [{ "type": "host", "value": "docs.roxy.theali.app" }],
       "destination": "/docs/:path"
     }

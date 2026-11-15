@@ -9,9 +9,11 @@ export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   if (host === 'docs.roxy.theali.app') {
+    if (pathname === '/host-debug') return NextResponse.next()
     if (pathname === '/docs' || pathname.startsWith('/docs/')) {
       return NextResponse.redirect(new URL(pathname.slice(5) || '/', request.url))
     }
+    if (pathname.startsWith('/api') || pathname.startsWith('/host-debug')) return NextResponse.next()
     return NextResponse.rewrite(new URL(`/docs${pathname === '/' ? '' : pathname}`, request.url))
   }
 
