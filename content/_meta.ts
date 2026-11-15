@@ -1,0 +1,20 @@
+export default {
+  index: 'Introduction',
+  'getting-started': { title: 'Getting started', type: 'separator' },
+  install: 'Download & install',
+  'first-run': 'Your first session',
+  'the-workspace': { title: 'The workspace', type: 'separator' },
+  concepts: 'Core concepts',
+  providers: 'Providers',
+  agents: 'Agent CLIs',
+  'the-engines': { title: 'The engines', type: 'separator' },
+  opencode: 'OpenCode',
+  router: '9Router & model priority',
+  reference: { title: 'Reference', type: 'separator' },
+  sessions: 'Sessions',
+  settings: 'Settings',
+  shortcuts: 'Keyboard shortcuts',
+  data: 'Data & privacy',
+  faq: 'FAQ',
+  'documentation-end': { type: 'separator', title: 'LOCAL FIRST. ALWAYS OPEN.' }
+}

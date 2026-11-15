@@ -1,128 +1,39 @@
+import Link from 'next/link'
+import { ProductWindow } from '../../components/product-window'
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, Cpu, Download, Github, Globe, Layers, Lock, Shield, Sparkles, Terminal, Zap } from '../../components/icons'
+
 export default function Home() {
-  return (
-    <>
-      <section className="hero">
-        <div className="wrap">
-          <div className="kicker">Native desktop · Rust · Open source</div>
-          <h1>One session.<br /><em>Every model.</em></h1>
-          <p className="lede">
-            ROXY is a single native window for every model you already have access to:
-            hosted APIs, local agent CLIs, and a priority router that falls through when
-            one provider is busy. Switch mid-thread — the full transcript goes with you.
-          </p>
-          <div className="actions">
-            <a className="btn primary" href="/install">Download ROXY <span className="sub">v0.2.0</span></a>
-            <a className="btn" href="/docs">Read the docs</a>
-            <a className="btn" href="https://github.com/RoaraxAli/ROXY" rel="noopener">View source</a>
-          </div>
-          <div className="meta-line">WINDOWS x64 · LINUX ARM64 · ~8 MB · NO TELEMETRY · NO ACCOUNT</div>
+  return <>
+    <section className="launch-hero"><div className="wrap">
+      <div className="hero-copy"><div className="release-pill"><span>ROXY V0.2.0</span><i />The open AI workspace <ArrowUpRight size={12}/></div>
+        <h1>Your models.<br/><span>One conversation.</span></h1>
+        <p className="hero-lede">Every model you use. Every workflow you rely on.<br className="desktop-br"/> One beautifully simple desktop app.</p>
+        <div className="hero-actions"><Link className="launch-btn primary" href="/install"><Download size={17}/> Download ROXY <span>It's free</span></Link><a className="launch-btn secondary" href="https://github.com/RoaraxAli/ROXY"><Github size={17}/> Star on GitHub <ArrowUpRight size={14}/></a></div>
+        <div className="platform-note"><span>FOR WINDOWS &amp; LINUX</span><i/><span>OPEN SOURCE</span><i/><span>NO ACCOUNT NEEDED</span></div>
+      </div>
+      <div className="hero-product"><div className="hero-orbit orbit-one"/><div className="hero-orbit orbit-two"/>
+        <div className="floating-label context-label"><span><Layers size={13}/></span><div>CONTEXT CARRIED<b>Nothing lost between models</b></div><Check size={14}/></div>
+        <div className="floating-label privacy-label"><Shield size={16}/><span>Local by design</span></div>
+        <ProductWindow />
+      </div>
+    </div></section>
 
-          <div className="mock" role="img" aria-label="ROXY window preview">
-            <div className="titlebar"><span className="dot" /><span className="dot" /><span className="dot" /><span className="url">roxy — session · rust-auth-refactor</span></div>
-            <div className="body">
-              <div className="rail">
-                <div className="row on" /><div className="row" /><div className="row" />
-                <div className="row" style={{ height: 1, background: '#181820' }} />
-                <div className="row" /><div className="row" />
-              </div>
-              <div className="chat">
-                <div className="bubble user">Refactor the token store and keep the public API stable.</div>
-                <div className="bubble">I’ll inventory the call sites first, then move the implementation behind the existing facade.</div>
-                <div className="handoff">HANDOFF · CDX → GEM · CONTEXT CARRIED</div>
-                <div className="bubble">The facade is preserved. Two call sites needed explicit lifetimes; tests pass locally.</div>
-                <div className="composer"><span className="pill">9router · auto-fallback</span><span className="pill">⌘↵ send</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="wrap"><div className="principle-strip"><div><span>01</span><p><b>Native. Not another tab.</b>A real desktop app built in Rust.</p></div><div><span>02</span><p><b>Your keys. Your machine.</b>No middleman. No telemetry.</p></div><div><span>03</span><p><b>Open, down to the source.</b>Audit it. Extend it. Make it yours.</p></div></div></div>
 
-      <section className="block" id="why">
-        <div className="wrap">
-          <div className="eyebrow">Why ROXY</div>
-          <h2>Stop re-explaining your work to a new model.</h2>
-          <p className="section-lede">
-            Every AI tool wants its own window, its own history and its own context.
-            ROXY keeps one thread and lets the model behind it change. When a quota runs
-            out or a provider is degraded, the conversation does not restart.
-          </p>
-          <div className="grid-3">
-            <div className="card"><div className="icon-badge">01</div><h3>Shared context</h3><p>Switching model never drops a message. The whole transcript is replayed to whichever provider answers next.</p></div>
-            <div className="card"><div className="icon-badge">02</div><h3>Priority routing</h3><p>Rank the models you trust. 9Router walks that order and falls through automatically when one is rate-limited or down.</p></div>
-            <div className="card"><div className="icon-badge">03</div><h3>Bring your own keys</h3><p>40+ OpenAI-compatible providers from a built-in catalogue. Keys stay on your machine, in your own config folder.</p></div>
-          </div>
-        </div>
-      </section>
+    <section className="home-section workflow-section" id="product"><div className="wrap">
+      <div className="section-heading"><div><div className="eyebrow"><span>01</span> THE WORKSPACE</div><h2>Different models.<br/>The same <span>you.</span></h2></div><p>Stop starting over. ROXY keeps your full conversation intact when you switch models, so every new perspective starts exactly where the last one left off.</p></div>
+      <div className="workflow-grid"><article className="feature-panel context-panel"><div className="feature-caption"><span className="feature-icon"><Layers size={20}/></span><div><h3>A continuous conversation</h3><p>Pick the right model for the moment. Not the right window.</p></div></div>
+        <div className="switch-demo"><div className="switch-model"><div className="big-model-icon">S</div><div><span>START WITH</span><b>Claude Sonnet</b><small>Deep reasoning &amp; architecture</small></div><Check size={17}/></div><div className="switch-line"><span>CONTEXT HANDOFF</span><ArrowRight size={18}/><span>12 MESSAGES</span></div><div className="switch-model second"><div className="big-model-icon gemini">G</div><div><span>CONTINUE WITH</span><b>Gemini Pro</b><small>Fast implementation &amp; iteration</small></div><ArrowUpRight size={17}/></div><div className="handoff-note"><Check size={13}/> Full history, attachments, and context included.</div></div>
+      </article><article className="feature-panel terminal-panel"><div className="feature-caption"><span className="feature-icon"><Terminal size={20}/></span><div><h3>Agents, already at home</h3><p>Install and run the CLIs you trust. No setup maze.</p></div></div><div className="agent-terminal"><div className="agent-header"><span>AVAILABLE AGENTS</span><span>9 INSTALLED</span></div>{['Codex CLI','Claude Code','Gemini CLI','OpenCode'].map((name,i)=><div className="agent-row" key={name}><span className={`agent-logo a${i}`}>{name[0]}</span><b>{name}</b><span className="agent-state"><i/> Ready</span><ArrowUpRight size={13}/></div>)}<div className="agent-more">+ Qwen, Copilot, Amp, Crush &amp; Grok</div></div></article></div>
+      <div className="three-features"><article><Globe size={21}/><h3>Every provider. One place.</h3><p>OpenAI, Anthropic, Google, Groq, OpenRouter, and 40+ OpenAI-compatible providers. Bring your keys; keep your freedom.</p></article><article><Lock size={21}/><h3>Private by default.</h3><p>Your keys and conversations stay on your device. Requests go directly to your provider, never through a ROXY server.</p></article><article><Cpu size={21}/><h3>Light on your machine.</h3><p>Native Rust. One executable. No Electron, no bundled browser, no runtime. Just a fast, focused workspace.</p></article></div>
+    </div></section>
 
-      <section className="block" id="stack">
-        <div className="wrap">
-          <div className="eyebrow">Built on OpenCode &amp; 9Router</div>
-          <h2>Two engines, one window.</h2>
-          <p className="section-lede">
-            ROXY is the interface. Under it, OpenCode runs as the agent runtime and
-            9Router keeps model traffic flowing. You install a tool once; ROXY keeps
-            using it for every session.
-          </p>
-          <div className="grid-2">
-            <div className="card">
-              <h3>OpenCode</h3>
-              <p>The agent runtime ROXY drives headlessly. Install it from <b>Models → CLI agents</b>; hosted API turns are routed through OpenCode&apos;s own configuration without touching your saved auth files.</p>
-              <p style={{ marginTop: 10 }}><a href="/docs/opencode">How OpenCode integration works →</a></p>
-            </div>
-            <div className="card">
-              <h3>9Router</h3>
-              <p>A local router on <code>localhost:20128</code> that exposes 40+ providers behind one OpenAI-compatible endpoint. ROXY reads its model list and lets you rank it.</p>
-              <p style={{ marginTop: 10 }}><a href="/docs/router">Model priority and fallback →</a></p>
-            </div>
-          </div>
-          <div className="callout" style={{ marginTop: 18 }}>
-            <b>Local by default.</b> ROXY talks to <code>localhost</code> or straight to the
-            provider you configured. There is no ROXY cloud, no relay, and no telemetry.
-          </div>
-        </div>
-      </section>
+    <section className="home-section routing-section" id="routing"><div className="wrap routing-layout"><div className="routing-copy"><div className="eyebrow"><span>02</span> INTELLIGENT ROUTING</div><h2>A busy model<br/>shouldn't stop <span>you.</span></h2><p>Rank your models once. When a provider is busy, rate-limited, or offline, ROXY moves to your next choice automatically. Your flow stays uninterrupted.</p><a className="text-link" href="https://docs.roxy.theali.app/router">Explore model priority <ArrowRight size={15}/></a><div className="routing-note"><Zap size={17}/><span>Powered by <b>9Router</b> — routing that runs on your machine.</span></div></div>
+      <div className="route-demo"><div className="route-top"><span>YOUR MODEL PRIORITY</span><span>AUTO-FALLBACK <i/></span></div><div className="route-item"><span className="drag">⠿</span><span className="priority">01</span><div className="big-model-icon">S</div><div><b>Claude Sonnet</b><small>anthropic / claude-sonnet</small></div><span className="route-status"><i/> Connected</span></div><div className="route-arrow"><ChevronDown size={15}/><span>IF UNAVAILABLE</span></div><div className="route-item"><span className="drag">⠿</span><span className="priority">02</span><div className="big-model-icon gemini">G</div><div><b>Gemini Pro</b><small>google / gemini-pro</small></div><span className="route-status"><i/> Ready</span></div><div className="route-arrow"><ChevronDown size={15}/><span>IF UNAVAILABLE</span></div><div className="route-item muted-route"><span className="drag">⠿</span><span className="priority">03</span><div className="big-model-icon openai">O</div><div><b>GPT</b><small>openai / gpt</small></div><span className="route-status">Standby</span></div><div className="route-bottom"><Shield size={13}/> Fallback before the first token. Never mid-response.</div></div>
+    </div></section>
 
-      <section className="block" id="features">
-        <div className="wrap">
-          <div className="eyebrow">Features</div>
-          <h2>Small binary. Real desktop app.</h2>
-          <p className="section-lede">No Electron, no webview, no runtime to install. A single executable that draws its UI on the GPU.</p>
-          <div className="grid-3">
-            <div className="card"><h3>Streaming</h3><p>Server-sent tokens through your gateway, with a stop button that actually stops the process.</p></div>
-            <div className="card"><h3>Local agents</h3><p>Codex, Claude Code, Gemini CLI, Qwen, Copilot, Amp, Crush, Grok — installed into ROXY&apos;s own folder, no admin rights.</p></div>
-            <div className="card"><h3>Sessions that persist</h3><p>Every transcript is JSON on disk. Search, rename, pin, archive, delete — no account needed.</p></div>
-            <div className="card"><h3>In-app updates</h3><p>A real progress bar, then ROXY swaps its binary and restarts. No terminal window, no manual download.</p></div>
-            <div className="card"><h3>Markdown rendering</h3><p>Code fences, lists, bold and inline code rendered natively in the transcript.</p></div>
-            <div className="card"><h3>Honest security</h3><p>Unsigned Windows builds are labelled as such, with SHA-256 checksums published for every release.</p></div>
-          </div>
-        </div>
-      </section>
+    <section className="home-section open-section" id="open-source"><div className="wrap"><div className="eyebrow"><span>03</span> YOURS TO BUILD ON</div><div className="open-layout"><div><h2>No black box.<br/><span>Just good software.</span></h2><p>ROXY is open source and built on tools the community already trusts. Read the source, shape the roadmap, or build something of your own.</p><div className="open-actions"><a className="launch-btn secondary" href="https://github.com/RoaraxAli/ROXY"><Github size={17}/> Explore the source <ArrowUpRight size={14}/></a><a className="text-link" href="https://docs.roxy.theali.app">Read the documentation <ArrowUpRight size={14}/></a></div></div><div className="open-code"><span>$ <b>cargo</b> build<span className="code-orange"> --release</span></span><span className="code-comment"># And make it entirely yours.</span><div><span>RUST</span><span>MIT LICENSED</span><span>BUILT ON OPENCODE &amp; 9ROUTER</span></div></div></div></div></section>
 
-      <section className="block" id="start">
-        <div className="wrap">
-          <div className="eyebrow">Get started</div>
-          <h2>Three steps to your first session.</h2>
-          <ol className="steps" style={{ marginTop: 24 }}>
-            <li><b>Download the build for your OS</b><p>Windows x64 or Linux ARM64. No installer, no admin rights — one executable.</p></li>
-            <li><b>Connect a model</b><p>Install a CLI agent in one click, add an API key, or start 9Router and let it fan out to providers.</p></li>
-            <li><b>Talk, then switch</b><p>Pick any model from the composer. The transcript follows you; priority fallback handles the rest.</p></li>
-          </ol>
-          <p style={{ marginTop: 26 }}><a className="btn primary" href="/install">Install ROXY</a></p>
-        </div>
-      </section>
-
-      <section className="block" id="faq">
-        <div className="wrap">
-          <div className="eyebrow">Questions</div>
-          <h2>Before you download.</h2>
-          <div style={{ marginTop: 24 }}>
-            <details className="faq"><summary>Is ROXY free?</summary><p>Yes. ROXY itself is open source and free. You pay only for the model providers you connect — or use the free tiers some of them offer.</p></details>
-            <details className="faq"><summary>Does it send my data anywhere?</summary><p>No. ROXY has no telemetry and no backend. Requests go directly to the endpoint you configured, or to a router running on your own machine.</p></details>
-            <details className="faq"><summary>Why does Windows warn about the download?</summary><p>The builds are not code-signed yet, so Windows cannot show a verified publisher. Every release publishes SHA-256 checksums so you can verify the file you downloaded. See <a href="/install#verify">verifying a download</a>.</p></details>
-            <details className="faq"><summary>Do I need OpenCode or 9Router?</summary><p>No. ROXY works with plain API providers on its own. OpenCode adds the agent runtime; 9Router adds multi-provider priority fallback.</p></details>
-          </div>
-        </div>
-      </section>
-    </>
-  )
+    <section className="closing-section"><div className="wrap"><div className="closing-symbol"><Sparkles size={28}/></div><h2>Less switching.<br/><span>More thinking.</span></h2><p>Your next idea doesn't care which model helps you build it.</p><Link href="/install" className="launch-btn primary"><Download size={17}/> Get ROXY for free <ArrowRight size={16}/></Link><span className="closing-meta">OPEN SOURCE · ONE EXECUTABLE · MAKE YOURSELF AT HOME</span></div></section>
+  </>
 }

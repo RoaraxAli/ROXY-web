@@ -19,9 +19,9 @@ you.
 
 ## Where to start
 
-1. [Install ROXY](/install/) — Windows x64 or Linux ARM64, one executable.
-2. [Connect a model](/providers/) — paste a key or install an agent CLI.
-3. [Switch models mid-thread](/sessions/) — the transcript carries over.
+1. [Install ROXY](install) — Windows x64 or Linux ARM64, one executable.
+2. [Connect a model](providers) — paste a key or install an agent CLI.
+3. [Switch models mid-thread](sessions) — the transcript carries over.
 
 ## How it is built
 
@@ -29,7 +29,7 @@ ROXY is written in Rust with egui/eframe. The binary is ~8 MB on Linux and
 ~6.6 MB on Windows, ships as a single file with no installer and no runtime,
 and draws its UI on the GPU. The release binaries are currently **unsigned**,
 which is why Windows shows “unknown publisher”; see
-[Install → troubleshooting](/install/#windows-protected-your-pc-unknown-publisher).
+[Install → troubleshooting](install#windows-protected-your-pc-unknown-publisher).
 
 ## Engines
 
@@ -39,4 +39,3 @@ ROXY is **built on OpenCode and 9Router**:
 - **9Router** is a local router on `localhost:20128` that exposes many providers
   behind one endpoint. ROXY reads its model list and lets you rank it, so a
   rate-limited provider never kills a turn.
-EOF
