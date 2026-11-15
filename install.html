@@ -148,9 +148,9 @@ roxy</code></pre>
       <p style="color:var(--dim);font-size:14px">Compare the printed hash with the value on the release page or the bundled <code>SHA256SUMS.txt</code>. If they differ, do not run the file — download it again.</p>
       <div class="callout" style="margin-top:16px">
         <b>Why no publisher name?</b> Windows shows a verified publisher only for
-        signed binaries. A code-signing certificate is a paid, identity-verified
-        process; until ROXY ships signed builds, the checksum is the strongest
-        verification available.
+        signed binaries, and a signature requires a certificate issued to a verified
+        identity. ROXY is applying for free open-source signing; until a certificate is
+        approved, the published checksum is the strongest verification available.
       </div>
     </div>
   </section>
@@ -181,7 +181,7 @@ roxy</code></pre>
         <details class="faq"><summary>“Needs Node.js” when installing an agent</summary><p>Agent CLIs are npm packages. Install Node.js LTS, restart ROXY, then press Install again. 9Router has the same requirement.</p></details>
         <details class="faq"><summary>Models list is empty for a provider</summary><p>Press <b>Refresh</b> in Models. For a local server, confirm it is running — 9Router listens on <code>localhost:20128</code>. A key-based provider needs a valid key before its <code>/models</code> endpoint answers.</p></details>
         <details class="faq"><summary>The update downloads but nothing changes</summary><p>The updater needs write access to the folder holding the executable. Move ROXY out of a read-only location and retry from Settings → About.</p></details>
-        <details class="faq"><summary>“Windows protected your PC” — unknown publisher</summary><p>Windows shows this for every executable that is not Authenticode-signed, because it has no publisher identity to display. Choose <b>More info → Run anyway</b>, or run <code>Unblock-File .\roxy.exe</code> before launching. Removing the message for everyone requires a code-signing certificate issued to a verified publisher; ROXY does not have one yet, which is why every release publishes SHA-256 checksums instead.</p></details>
+        <details class="faq"><summary>“Windows protected your PC” — unknown publisher</summary><p>Windows shows this for every executable that is not Authenticode-signed, because it has no publisher identity to display. Choose <b>More info → Run anyway</b>, or run <code>Unblock-File .\roxy.exe</code> before launching. Removing the message for everyone requires a code-signing certificate issued to a verified publisher. ROXY has applied to the free open-source signing programmes (SignPath Foundation, Certum); until one is approved, every release publishes SHA-256 checksums instead — status in <a href="https://github.com/RoaraxAli/ROXY/blob/main/SIGNING.md" rel="noopener">SIGNING.md</a>.</p></details>
         <details class="faq"><summary>Antivirus flags roxy.exe</summary><p>Reputation warnings are common for new unsigned binaries. Verify the checksum; if you would rather compile it yourself, the source and build steps are below.</p></details>
       </div>
     </div>
