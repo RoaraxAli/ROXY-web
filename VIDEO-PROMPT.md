@@ -66,22 +66,41 @@ bottom-right). See `assets/logo.svg` and `assets/roxy-brand.svg`.
 
 ## 3. Assets to use
 
-All under `assets/` of the ROXY-web repo (and the app repo):
+All under `assets/` of the ROXY-web repo (and the app repo). Use these real
+captures — do not redraw the app chrome in vector.
+
+Brand assets:
 - `assets/logo.svg`, `assets/roxy-brand.svg`
+
+App screenshots (all 1320×850, dark theme, lime accent):
 - `assets/shots/01-splash.png` — the loader: dark field, centred lime mark,
   "ROXY", "one session · every model", stage text "INITIALISING RUNTIME", and
-  the line "BUILT ON OPENCODE & 9ROUTER".
+  the line "BUILT ON OPENCODE & 9ROUTER". **This is the only place the brand
+  line appears in the app — use it as the signature frame.**
 - `assets/shots/02-chat.png` — the main window: rail (Chat/Models/Settings),
   session list, transcript with a user bubble, an assistant bubble, a centred
   handoff marker "HANDOFF · CLAUDE-SONNET-4.5 → GPT-5-CODEX · CONTEXT CARRIED",
   composer with the model chip, token counter.
-- `assets/shots/03-models-router.png` — Models page scrolled to the 9Router
+- `assets/shots/03-models-top.png` — Models page, top: "LOCAL AGENTS" with the
+  nine installable CLI cards (Codex, Claude Code, Gemini CLI, OpenCode, Qwen,
+  Copilot, Amp, Crush, Grok) and their install/detect state.
+- `assets/shots/04-models-router.png` — Models page scrolled to the 9Router
   card: ranked model list 01–06 with ↑/↓, "online" pill, "MODEL PRIORITY"
   header, "Rank your models once…".
-- `assets/shots/04-picker.png` — the model picker overlay: search field,
+- `assets/shots/05-picker.png` — the model picker overlay: search field,
   grouped providers, "No 'Auto' entry — you always see what will answer".
-- `assets/shots/05-about.png` — Settings → About: version pill, update status,
-  "Check for updates" / "Install update" buttons, provider credits.
+- `assets/shots/06-settings-general.png` — Settings → General: auto-titling,
+  send-on-enter, tokens, system prompt, temperature, history limit, streaming.
+- `assets/shots/07-settings-models.png` — Settings → Models: defaults,
+  enable/disable, model visibility and prefixes.
+- `assets/shots/08-settings-cli.png` — Settings → CLI: working directory,
+  permission mode, timeout, agent detection.
+- `assets/shots/09-settings-appearance.png` — Settings → Appearance: accent
+  colour, font scale, compact layout, chat width, motion.
+- `assets/shots/10-settings-data.png` — Settings → Data: open folder, save now,
+  export sessions, delete all sessions.
+- `assets/shots/11-settings-about.png` — Settings → About: version pill,
+  update status, "Check for updates" / "Install update", provider credits.
 
 Do not invent UI. If a needed state isn't in a screenshot, animate the existing
 screenshot (pan/zoom/crop) rather than redrawing chrome.
