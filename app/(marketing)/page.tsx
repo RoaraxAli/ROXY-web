@@ -5,11 +5,12 @@ import { ArrowRight, ArrowUpRight, Check, ChevronDown, Cpu, Download, Github, Gl
 export default function Home() {
   return <>
     <section className="launch-hero"><div className="wrap">
-      <div className="hero-copy"><div className="release-pill"><span>ROXY V0.2.0</span><i />The open AI workspace <ArrowUpRight size={12}/></div>
-        <h1>Your models.<br/><span>One conversation.</span></h1>
-        <p className="hero-lede">Every model you use. Every workflow you rely on.<br className="desktop-br"/> One beautifully simple desktop app.</p>
+      <div className="hero-index"><span>ROXY / AI WORKSPACE</span><span>BUILT FOR THE WAY YOU THINK <i aria-hidden="true" /></span></div>
+      <div className="hero-copy"><div className="release-pill"><span>ROXY V0.2.0</span><i aria-hidden="true" />The open AI workspace <ArrowUpRight size={12}/></div>
+        <h1><span className="hero-line">Many models.</span><span className="hero-line hero-line-secondary">One <em>clear</em> train of thought.</span></h1>
+        <p className="hero-lede">Move between the models you trust without leaving the conversation behind.</p>
         <div className="hero-actions"><Link className="launch-btn primary" href="/install"><Download size={17}/> Download ROXY <span>It's free</span></Link><a className="launch-btn secondary" href="https://github.com/RoaraxAli/ROXY"><Github size={17}/> Star on GitHub <ArrowUpRight size={14}/></a></div>
-        <div className="platform-note"><span>FOR WINDOWS &amp; LINUX</span><i/><span>OPEN SOURCE</span><i/><span>NO ACCOUNT NEEDED</span></div>
+        <div className="platform-note"><span>FOR WINDOWS &amp; LINUX</span><i aria-hidden="true"/><span>OPEN SOURCE</span><i aria-hidden="true"/><span>NO ACCOUNT NEEDED</span></div>
       </div>
       <div className="hero-product"><div className="hero-orbit orbit-one"/><div className="hero-orbit orbit-two"/>
         <div className="floating-label context-label"><span><Layers size={13}/></span><div>CONTEXT CARRIED<b>Nothing lost between models</b></div><Check size={14}/></div>

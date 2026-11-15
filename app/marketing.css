@@ -23,6 +23,38 @@
 .platform-note{color:var(--muted);margin-top:23px}
 @media(max-width:760px){.launch-hero{padding-top:56px}.hero-copy h1{font-size:clamp(48px,13.6vw,66px);line-height:1.02;letter-spacing:-.065em}.hero-copy h1 span:after{margin-top:23px;width:36px}.hero-lede{margin-top:20px;font-size:14px}.hero-product{margin-top:56px}}
 
+/* Editorial typography: confident display face, compact mono labels, and calmer body copy. */
+.marketing-shell{font-family:var(--font-sans),sans-serif}
+.marketing-shell .hero-copy h1,.marketing-shell .section-heading h2,.marketing-shell .routing-copy h2,.marketing-shell .open-layout h2,.marketing-shell .closing-section h2{font-family:var(--font-sans),sans-serif;font-feature-settings:'ss01' on,'ss03' on;}
+.marketing-shell .hero-copy h1{font-size:clamp(58px,7.7vw,106px);line-height:.96;letter-spacing:-.085em;font-weight:650}
+.marketing-shell .hero-copy h1 .hero-line{font-weight:650}
+.marketing-shell .hero-copy h1 .hero-line-secondary{font-weight:450;letter-spacing:-.075em}
+.marketing-shell .hero-copy h1 em{font-weight:600}
+.marketing-shell .hero-lede{font-size:16px;line-height:1.7;letter-spacing:-.015em}
+.marketing-shell .section-heading h2,.marketing-shell .routing-copy h2,.marketing-shell .open-layout h2,.marketing-shell .closing-section h2{font-weight:600;letter-spacing:-.065em;line-height:1.02}
+.marketing-shell .hero-index,.marketing-shell .eyebrow,.marketing-shell .platform-note,.marketing-shell .release-pill{font-family:var(--font-mono,ui-monospace),monospace;letter-spacing:.08em}
+.marketing-shell .hero-index{font-size:9px;font-weight:500}
+.marketing-shell .hero-index{display:flex;justify-content:space-between;align-items:center;margin:0 0 54px;padding-bottom:13px;border-bottom:1px solid var(--line);font:500 9px 'DM Mono',var(--font-mono),monospace;letter-spacing:.12em;color:var(--muted)}
+.marketing-shell .hero-index>span:last-child{display:flex;align-items:center;gap:10px}
+.marketing-shell .hero-index i{width:6px;height:6px;background:var(--text);border-radius:50%;box-shadow:0 0 12px #ffffff55}
+.marketing-shell .hero-copy{text-align:left;max-width:1000px;margin:0 auto}
+.marketing-shell .hero-copy .release-pill{margin-bottom:24px}
+.marketing-shell .hero-copy h1{font-size:clamp(54px,7.25vw,98px);line-height:.99;letter-spacing:-.078em;font-weight:550;text-wrap:balance;margin:0;max-width:1050px}
+.marketing-shell .hero-copy h1 .hero-line{display:block;color:var(--text);font-weight:550}
+.marketing-shell .hero-copy h1 .hero-line-secondary{font-weight:450;color:var(--muted);margin-top:.12em}
+.marketing-shell .hero-copy h1 em{font-style:normal;color:var(--text);position:relative;white-space:nowrap}
+.marketing-shell .hero-copy h1 em{background:linear-gradient(transparent 78%,color-mix(in srgb,var(--muted) 34%,transparent) 78%);background-repeat:no-repeat}
+.marketing-shell .hero-copy h1 span:after{display:none}
+.marketing-shell .hero-lede{margin:26px 0 28px;max-width:490px;font-size:15px;line-height:1.75;letter-spacing:-.02em;text-wrap:pretty;color:var(--muted)}
+.marketing-shell .hero-actions{justify-content:flex-start}
+.marketing-shell .platform-note{justify-content:flex-start}
+.marketing-shell .hero-product{margin-top:72px}
+@media(max-width:760px){.marketing-shell .hero-index{margin-bottom:37px;font-size:7px;letter-spacing:.07em}.marketing-shell .hero-copy{text-align:left}.marketing-shell .hero-copy h1{font-size:clamp(46px,11.4vw,72px);line-height:1;letter-spacing:-.08em}.marketing-shell .hero-copy h1 .hero-line-secondary{margin-top:.15em;letter-spacing:-.072em}.marketing-shell .hero-lede{margin:19px 0 24px;font-size:14px;max-width:370px}.marketing-shell .hero-actions{justify-content:flex-start}.marketing-shell .platform-note{justify-content:flex-start}.marketing-shell .hero-product{margin-top:50px}}
+@media(max-width:420px){.marketing-shell .hero-index{align-items:flex-start;flex-direction:column;gap:7px}.marketing-shell .hero-copy h1{font-size:clamp(40px,10.7vw,46px)}.marketing-shell .hero-copy h1 em{white-space:normal}}
+html[data-theme="light"] .marketing-shell .hero-index i{box-shadow:0 0 10px #00000035}
+@media(prefers-reduced-motion:no-preference){.marketing-shell .hero-copy>*{animation:hero-enter .7s cubic-bezier(.23,1,.32,1) both}.marketing-shell .hero-copy>*:nth-child(2){animation-delay:.06s}.marketing-shell .hero-copy>*:nth-child(3){animation-delay:.13s}.marketing-shell .hero-copy>*:nth-child(4){animation-delay:.2s}@keyframes hero-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}}
+
+
 /* The web workspace deliberately stays achromatic in both themes. */
 .marketing-shell{--bg:#090909;--surface:#111111;--surface2:#191919;--line:#2b2b2b;--text:#f3f3f3;--muted:#a0a0a0;--lime:#f3f3f3}
 .marketing-shell .roxy-mark{background:var(--text);box-shadow:inset 0 0 0 1px #fff}
