@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROXY — video prompt for Claude</title>
+  <meta name="description" content="The full brief for generating the ROXY intro animation: brand system, storyboard, audio, technical constraints." />
+  <meta name="theme-color" content="#07070a" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    article.vp { max-width: 820px; }
+    article.vp h2 { margin-top: 42px; }
+    article.vp h3 { margin-top: 26px; font-size: 16px; }
+    article.vp ul, article.vp ol { color: var(--dim); font-size: 14.5px; }
+    article.vp li { margin-bottom: 6px; }
+    article.vp table { font-size: 13px; }
+    article.vp code { font-size: 12px; }
+    article.vp pre { font-size: 11.5px; }
+    .vp-note { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 14px 16px; color: var(--dim); font-size: 13px; margin: 18px 0; }
+    .vp-note b { color: var(--text); }
+  </style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 26V6h9.5a6 6 0 0 1 0 12H9m8 0 8 8" fill="none" stroke="#07070a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span><b>ROXY</b><span>one session · every model</span></span>
+    </a>
+    <nav class="main">
+      <a href="index.html">Overview</a>
+      <a href="install.html">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="video-prompt.html" aria-current="page">Video brief</a>
+      <a href="https://github.com/RoaraxAli/ROXY" rel="noopener">Source</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:18px">
+    <div class="wrap">
+      <div class="kicker">Production brief</div>
+      <h1 style="font-size:clamp(30px,4.4vw,44px)">Claude prompt — ROXY intro video</h1>
+      <p class="lede">Copy this page (or <a href="https://raw.githubusercontent.com/RoaraxAli/ROXY-web/main/VIDEO-PROMPT.md">the markdown</a>) into a fresh Claude session together with the screenshots in <code>assets/shots/</code>. Output: a 15-second product intro in 16:9, 9:16 and 1:1, plus a 6-second silent GIF loop.</p>
+      <div class="meta-line">15.0s · 30fps · 1920×1080 · H.264 + AAC · ≤ 12 MB</div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:10px">
+    <div class="wrap">
+      <article class="vp">
+
+        <h2>0. What ROXY is</h2>
+        <p>ROXY is a native desktop AI client written in Rust. One conversation, every model: the user switches which model answers <b>mid-thread</b> and the full transcript is replayed to whichever provider serves the next turn. It bundles a 9Router priority fallback (ranked models, automatic fall-through on failure), agent CLIs (Codex, Claude Code, Gemini, OpenCode, …) and 40+ OpenAI-compatible providers. Built on OpenCode &amp; 9Router. No account, no telemetry, no backend.</p>
+        <p><b>Tagline:</b> "One session. Every model."<br /><b>Brand line:</b> "BUILT ON OPENCODE &amp; 9ROUTER"</p>
+
+        <h2>1. Deliverables</h2>
+        <ol>
+          <li><code>roxy-intro-16x9.mp4</code> — 1920×1080, 15.0s, 30fps, H.264 + AAC, ≤ 12 MB.</li>
+          <li><code>roxy-intro-9x16.mp4</code> — 1080×1920, same content reframed for vertical (TikTok/Reels/Shorts).</li>
+          <li><code>roxy-intro-1x1.mp4</code> — 1080×1080 (LinkedIn/X).</li>
+          <li>A Remotion project (or After Effects project) so copy and timings can be edited.</li>
+          <li>A 6-second silent GIF loop of the hero moment (model switch) for the README.</li>
+        </ol>
+        <p>All cuts share one storyboard; only framing and pacing change.</p>
+
+        <h2>2. Brand system (use exactly)</h2>
+        <h3>Palette (dark, single accent)</h3>
+        <ul>
+          <li>Background deep: <code>#07070a</code></li>
+          <li>Background soft: <code>#0b0b10</code></li>
+          <li>Panel: <code>#101015</code></li>
+          <li>Border: <code>#23232c</code> / soft <code>#1a1a21</code></li>
+          <li>Text: <code>#ececf1</code></li>
+          <li>Text dim: <code>#9c9caa</code></li>
+          <li>Text faint: <code>#6b6b7a</code></li>
+          <li>Accent (lime): <code>#c8f751</code> — the only saturated colour. Use it for the mark, the handoff line, progress, and the final CTA. Never for large fills.</li>
+        </ul>
+        <h3>Typography</h3>
+        <ul>
+          <li>UI sans: Inter (400/500/600/700). 600 for headings, 400 for body.</li>
+          <li>Mono: JetBrains Mono. Model names, tokens, code, the "BUILT ON …" line, and the handoff marker. Letter-spacing +1.2 to +3px on uppercase mono labels.</li>
+          <li>Wordmark: <code>ROXY</code> in 700, letter-spacing 6–8px, uppercase.</li>
+        </ul>
+        <h3>Logo mark</h3>
+        <p>Rounded square (corner radius ~8px on a 32px grid), lime fill <code>#c8f751</code>, containing a single near-black monoline glyph — a stylised "R" drawn as one continuous stroke (vertical stem, bowl, then a leg that exits bottom-right). See <code>assets/logo.svg</code> and <code>assets/roxy-brand.svg</code>.</p>
+        <h3>Motion language (match the app)</h3>
+        <ul>
+          <li>Easing: <code>cubic-bezier(0.22, 1, 0.36, 1)</code> for entrances, <code>cubic-bezier(0.4, 0, 0.2, 1)</code> for exits.</li>
+          <li>Springs: stiffness 180, damping 22 for UI elements; stiffness 120, damping 18 for the window/brand.</li>
+          <li>Durations: micro 120ms, element 240ms, scene 400–600ms. Nothing slower than 700ms.</li>
+          <li>Stagger: 40–60ms between siblings.</li>
+          <li>Reduced motion: every animated element must have a static fallback; honour <code>prefers-reduced-motion</code>.</li>
+          <li>No bouncy overshoot on text. Subtle overshoot (≤ 4px) allowed on the mark and the progress bar fill only.</li>
+        </ul>
+
+        <h2>3. Assets to use</h2>
+        <p>All under <code>assets/</code>. Use these real captures — do not redraw the app chrome in vector.</p>
+        <p>Brand: <code>assets/logo.svg</code>, <code>assets/roxy-brand.svg</code></p>
+        <p>Screenshots (all 1320×850, dark theme, lime accent):</p>
+        <ul>
+          <li><code>assets/shots/01-splash.png</code> — loader: dark field, centred lime mark, "ROXY", "one session · every model", stage "INITIALISING RUNTIME", and the line "BUILT ON OPENCODE &amp; 9ROUTER". <b>This is the only place the brand line appears in the app — use it as the signature frame.</b></li>
+          <li><code>assets/shots/02-chat.png</code> — main window: rail, session list, transcript with a user bubble, an assistant bubble, a centred handoff marker "HANDOFF · CLAUDE-SONNET-4.5 → GPT-5-CODEX · CONTEXT CARRIED", composer with model chip, token counter.</li>
+          <li><code>assets/shots/03-models-top.png</code> — Models page, top: "LOCAL AGENTS" with the nine installable CLI cards.</li>
+          <li><code>assets/shots/04-models-router.png</code> — Models page scrolled to the 9Router card: ranked list 01–06 with ↑/↓, "online" pill, "MODEL PRIORITY", "Rank your models once…".</li>
+          <li><code>assets/shots/05-picker.png</code> — model picker overlay: search field, grouped providers, no "Auto" entry.</li>
+          <li><code>assets/shots/06-settings-general.png</code> — Settings → General.</li>
+          <li><code>assets/shots/07-settings-models.png</code> — Settings → Models.</li>
+          <li><code>assets/shots/08-settings-cli.png</code> — Settings → CLI.</li>
+          <li><code>assets/shots/09-settings-appearance.png</code> — Settings → Appearance.</li>
+          <li><code>assets/shots/10-settings-data.png</code> — Settings → Data.</li>
+          <li><code>assets/shots/11-settings-about.png</code> — Settings → About: version pill, update status, "Check for updates" / "Install update".</li>
+        </ul>
+
+        <h2>4. Storyboard (15.0s @ 30fps = 450 frames)</h2>
+
+        <h3>Beat 1 — "The problem" (0.0–2.4s, frames 0–72)</h3>
+        <p>Black field <code>#07070a</code>. Three small terminal-window silhouettes fade in, stacked and offset, each labelled in mono: "chatgpt", "claude", "gemini". A fourth label "context" drifts between them and dissolves. Caption: <i>"Every model wants its own window. Its own history."</i> Exit: the three windows collapse to a single point of light.</p>
+
+        <h3>Beat 2 — "One session" (2.4–5.6s, frames 72–168)</h3>
+        <p>The point of light becomes the ROXY mark (lime square, 58px → 96px, spring stiffness 120/damping 18). Wordmark "ROXY" types in letter-by-letter (40ms/char, mono 700, tracking 8px). Tagline fades up: "one session · every model". The loader screenshot (<code>01-splash.png</code>) scales in behind the mark at 0.85× → 1.0× with a soft blur-to-sharp (8px → 0) over 400ms. The stage line ticks "INITIALISING RUNTIME" → "PROBING GATEWAYS" → "READY". The "BUILT ON OPENCODE &amp; 9ROUTER" line lands last, in lime mono, +1.2 letter-spacing. Hold 600ms.</p>
+
+        <h3>Beat 3 — "The switch" (5.6–9.2s, frames 168–276) ← hero moment, also the GIF</h3>
+        <p>Crossfade to <code>02-chat.png</code> (full window, 1280×800, centred, subtle drop shadow). Caption (bottom-left, mono, dim): "Switch mid-thread. Nothing is lost." At 6.4s: the model chip in the header pulses (scale 1.0→1.06→1.0, 240ms) and the transcript scrolls up one turn. At 7.0s: the centred handoff marker <code>HANDOFF · CLAUDE-SONNET-4.5 → GPT-5-CODEX · CONTEXT CARRIED</code> wipes in left-to-right with a lime underline (300ms, ease-out-expo). At 7.6s: a new assistant bubble types in at ~45 chars/s with a blinking caret. At 8.4s: the composer's model chip swaps from "CLAUDE" to "GPT-5-CODEX" with a 180ms crossfade.</p>
+
+        <h3>Beat 4 — "Priority routing" (9.2–12.0s, frames 276–360)</h3>
+        <p>Pan/zoom to <code>04-models-router.png</code> (scale 1.0→1.12, translate to centre the 9Router card). Caption: "Rank your models. ROXY walks the list." The ranked list items 01–06 stagger in (50ms each) with a lime left-bar that grows 0→100% height. The "online" pill fades in. A small animated diagram overlays the card: a request arrow enters from the left, hits item 01, bounces to 02 when 01 "fails" (red flash → grey), then lands on 03 with a green check — all in 900ms. Sub-caption: "Falls through before any token streams."</p>
+
+        <h3>Beat 5 — "Ship it" (12.0–15.0s, frames 360–450)</h3>
+        <p>Cut to a clean dark field. The mark returns, smaller (64px), top-centre. The wordmark and tagline. Then three CTAs fade up staggered (80ms): "Download" (primary, lime fill) → https://github.com/RoaraxAli/ROXY/releases/latest; "Read the docs" → https://roaraxali.github.io/ROXY-web/docs.html; "Source" → https://github.com/RoaraxAli/ROXY. Below them, mono faint: "WINDOWS x64 · LINUX ARM64 · ~7 MB · NO TELEMETRY". The "BUILT ON OPENCODE &amp; 9ROUTER" line fades in last at the very bottom. Fade to black over the last 400ms.</p>
+
+        <h2>5. Audio</h2>
+        <ul>
+          <li>0.0–2.4s: low ambient drone (−24 LUFS), a single soft tick on each window collapse.</li>
+          <li>2.4s: a short, warm chime (two notes, ~240ms) on the mark landing.</li>
+          <li>5.6–9.2s: very subtle typing tick (−30 LUFS) synced to the assistant bubble; a soft whoosh on the handoff wipe.</li>
+          <li>9.2–12.0s: a light "ping" on the successful fall-through.</li>
+          <li>12.0–15.0s: music resolves to a tonic; final 400ms fade.</li>
+          <li>Keep the whole mix at −16 LUFS integrated, −1 dBTP true peak.</li>
+        </ul>
+
+        <h2>6. Technical constraints</h2>
+        <ul>
+          <li>Use the bundled screenshots as the only UI imagery. Do not redraw the app chrome in vector — animate the PNGs (scale, translate, crop, opacity, blur).</li>
+          <li>Text overlays must be real text (not baked into images) so they stay crisp at 4K if we upscale later.</li>
+          <li>Respect <code>prefers-reduced-motion</code>: provide a static 15s version with no movement (crossfades only).</li>
+          <li>All motion must be deterministic (no random seeds) so renders are reproducible.</li>
+          <li>File size budget 12 MB for the 16:9 cut; use CRF 20, two-pass if needed.</li>
+        </ul>
+
+        <h2>7. Do not</h2>
+        <ul>
+          <li>Do not show any IP address, hostname, or private path. The only URLs are github.com/RoaraxAli/ROXY, roaraxali.github.io/ROXY-web, and the releases page.</li>
+          <li>Do not invent features. If something isn't in a screenshot or in §0, leave it out.</li>
+          <li>Do not use the word "Auto" anywhere — ROXY deliberately has no Auto model.</li>
+          <li>Do not make the lime accent dominate; it is a signal colour, not a theme.</li>
+        </ul>
+
+        <h2>8. Success check</h2>
+        <p>Render at 30fps, watch once with sound off, then with sound on. The viewer should be able to say, in one sentence, what ROXY does and why they'd switch models mid-thread — without reading any caption twice.</p>
+
+        <div class="vp-note"><b>Source files:</b> the full markdown is at <a href="https://raw.githubusercontent.com/RoaraxAli/ROXY-web/main/VIDEO-PROMPT.md">VIDEO-PROMPT.md</a> (raw) and <a href="https://github.com/RoaraxAli/ROXY-web/blob/main/VIDEO-PROMPT.md">on GitHub</a>.</div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div><div><b style="color:var(--text)">ROXY</b> — one session, every model.</div><div>Open source desktop AI client, built in Rust.</div></div>
+      <div><div style="color:var(--text);margin-bottom:8px">Product</div><div><a href="index.html">Overview</a></div><div><a href="install.html">Install</a></div><div><a href="docs.html">Docs</a></div></div>
+      <div><div style="color:var(--text);margin-bottom:8px">Project</div><div><a href="https://github.com/RoaraxAli/ROXY" rel="noopener">Source</a></div><div><a href="https://github.com/RoaraxAli/ROXY/issues" rel="noopener">Issues</a></div></div>
+    </div>
+    <div class="fine">ROXY · BUILT ON OPENCODE &amp; 9ROUTER · NO TELEMETRY</div>
+  </div>
+</footer>
+</body>
+</html>
