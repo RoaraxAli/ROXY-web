@@ -72,10 +72,12 @@
       </div>
 
       <div class="callout warn" style="margin-top:18px">
-        <b>Windows will warn you.</b> ROXY builds are not code-signed yet, so Windows
-        cannot show a verified publisher and SmartScreen may call the app
-        unrecognized. This is expected for a new, unsigned open-source binary.
-        Prefer to check before running — use the checksum steps below.
+        <b>“Windows protected your PC — unknown publisher”.</b> ROXY builds are not
+        code-signed yet, so Windows has no publisher identity to show and treats the
+        file as unrecognized. That message is about identity, not detection: a brand-new
+        unsigned binary has no SmartScreen reputation at all. Click <b>More info → Run
+        anyway</b>, or clear the download mark first. Verify the checksum below if you
+        want proof the file is the one published here.
       </div>
     </div>
   </section>
@@ -87,6 +89,7 @@
       <ol class="steps" style="margin-top:22px">
         <li><b>Download the ZIP</b><p>Use the Windows card above. Your browser may keep it in <code>Downloads</code>.</p></li>
         <li><b>Extract it</b><p>Right-click the ZIP → <b>Extract All</b>. Running ROXY from inside the ZIP will not work.</p></li>
+        <li><b>Clear the “downloaded from the internet” block</b><p>Optional but it removes the SmartScreen prompt entirely. In PowerShell, run <code>Unblock-File .\roxy.exe</code> in the folder that holds the file.</p></li>
         <li><b>Move it somewhere permanent</b><p>For example <code>%LOCALAPPDATA%\Programs\ROXY\</code>. The updater needs write access to this folder.</p></li>
         <li><b>Run roxy.exe</b><p>If SmartScreen appears, choose <b>More info</b> and confirm only if you verified the checksum or trust the source.</p></li>
         <li><b>Connect a model</b><p>Open <b>Models → API models</b> and add a provider, or install a CLI agent in one click.</p></li>
@@ -178,6 +181,7 @@ roxy</code></pre>
         <details class="faq"><summary>“Needs Node.js” when installing an agent</summary><p>Agent CLIs are npm packages. Install Node.js LTS, restart ROXY, then press Install again. 9Router has the same requirement.</p></details>
         <details class="faq"><summary>Models list is empty for a provider</summary><p>Press <b>Refresh</b> in Models. For a local server, confirm it is running — 9Router listens on <code>localhost:20128</code>. A key-based provider needs a valid key before its <code>/models</code> endpoint answers.</p></details>
         <details class="faq"><summary>The update downloads but nothing changes</summary><p>The updater needs write access to the folder holding the executable. Move ROXY out of a read-only location and retry from Settings → About.</p></details>
+        <details class="faq"><summary>“Windows protected your PC” — unknown publisher</summary><p>Windows shows this for every executable that is not Authenticode-signed, because it has no publisher identity to display. Choose <b>More info → Run anyway</b>, or run <code>Unblock-File .\roxy.exe</code> before launching. Removing the message for everyone requires a code-signing certificate issued to a verified publisher; ROXY does not have one yet, which is why every release publishes SHA-256 checksums instead.</p></details>
         <details class="faq"><summary>Antivirus flags roxy.exe</summary><p>Reputation warnings are common for new unsigned binaries. Verify the checksum; if you would rather compile it yourself, the source and build steps are below.</p></details>
       </div>
     </div>
