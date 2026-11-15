@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Install ROXY — Windows and Linux</title>
+  <meta name="description" content="Download ROXY for Windows x64 or Linux ARM64, verify the checksum, and connect your first model in a few minutes." />
+  <meta name="theme-color" content="#07070a" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 26V6h9.5a6 6 0 0 1 0 12H9m8 0 8 8" fill="none" stroke="#07070a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span><b>ROXY</b><span>one session · every model</span></span>
+    </a>
+    <nav class="main">
+      <a href="index.html">Overview</a>
+      <a href="install.html" aria-current="page">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="https://github.com/RoaraxAli/ROXY" rel="noopener">Source</a>
+      <a class="cta" href="#downloads">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom:26px">
+    <div class="wrap">
+      <div class="kicker">Install</div>
+      <h1 style="font-size:clamp(32px,4.6vw,46px)">Download ROXY</h1>
+      <p class="lede">
+        One executable, no installer and no runtime. Pick your platform, verify the
+        checksum if you want, and launch. The whole flow takes about two minutes.
+      </p>
+      <div class="meta-line">LATEST RELEASE · v0.2.0 · UPDATES IN-APP</div>
+    </div>
+  </section>
+
+  <section class="block" id="downloads" style="padding-top:20px">
+    <div class="wrap">
+      <div class="anchor-nav">
+        <a href="#windows">Windows</a>
+        <a href="#linux">Linux</a>
+        <a href="#first-run">First run</a>
+        <a href="#verify">Verify download</a>
+        <a href="#update">Updating</a>
+        <a href="#troubleshoot">Troubleshooting</a>
+        <a href="#source">Build from source</a>
+      </div>
+
+      <div class="dl">
+        <div class="card" id="windows">
+          <div class="os"><span class="glyph">WIN</span><h3>Windows 10 / 11 · x64</h3></div>
+          <p class="req">64-bit Windows 10 (1809+) or Windows 11. No admin rights required.</p>
+          <div class="links">
+            <a href="https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-windows-x64.zip">Download .zip →</a>
+            <a href="https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy.exe">Download .exe →</a>
+          </div>
+          <div class="sum">zip contains roxy.exe + README. The bare .exe is the same binary.</div>
+        </div>
+        <div class="card" id="linux">
+          <div class="os"><span class="glyph">LNX</span><h3>Linux · ARM64</h3></div>
+          <p class="req">aarch64 Linux with a desktop session (X11 or Wayland) and OpenGL.</p>
+          <div class="links">
+            <a href="https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-linux">Download binary →</a>
+          </div>
+          <div class="sum">x86_64 Linux builds from source — see below.</div>
+        </div>
+      </div>
+
+      <div class="callout warn" style="margin-top:18px">
+        <b>Windows will warn you.</b> ROXY builds are not code-signed yet, so Windows
+        cannot show a verified publisher and SmartScreen may call the app
+        unrecognized. This is expected for a new, unsigned open-source binary.
+        Prefer to check before running — use the checksum steps below.
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="windows-steps">
+    <div class="wrap">
+      <div class="eyebrow">Windows</div>
+      <h2>Install on Windows</h2>
+      <ol class="steps" style="margin-top:22px">
+        <li><b>Download the ZIP</b><p>Use the Windows card above. Your browser may keep it in <code>Downloads</code>.</p></li>
+        <li><b>Extract it</b><p>Right-click the ZIP → <b>Extract All</b>. Running ROXY from inside the ZIP will not work.</p></li>
+        <li><b>Move it somewhere permanent</b><p>For example <code>%LOCALAPPDATA%\Programs\ROXY\</code>. The updater needs write access to this folder.</p></li>
+        <li><b>Run roxy.exe</b><p>If SmartScreen appears, choose <b>More info</b> and confirm only if you verified the checksum or trust the source.</p></li>
+        <li><b>Connect a model</b><p>Open <b>Models → API models</b> and add a provider, or install a CLI agent in one click.</p></li>
+      </ol>
+      <h3>Where Windows puts your data</h3>
+      <p style="color:var(--dim);font-size:14px">Config, sessions and the log live in <code>%APPDATA%\roxy\</code>. Delete that folder for a clean slate. Settings also have a <b>Data folder</b> button that opens it.</p>
+    </div>
+  </section>
+
+  <section class="block" id="linux-steps">
+    <div class="wrap">
+      <div class="eyebrow">Linux</div>
+      <h2>Install on Linux</h2>
+      <ol class="steps" style="margin-top:22px">
+        <li><b>Download the binary</b><p>Use the Linux card above.</p></li>
+        <li><b>Make it executable</b><p><code>chmod +x roxy-linux</code></p></li>
+        <li><b>Move it onto your PATH</b><p>For example <code>mkdir -p ~/.local/bin &amp;&amp; mv roxy-linux ~/.local/bin/roxy</code>.</p></li>
+        <li><b>Launch it</b><p>Run <code>roxy</code> from a terminal once so you can see any graphics-driver message.</p></li>
+        <li><b>Connect a model</b><p>Same as Windows: Models → API models, or install an agent CLI.</p></li>
+      </ol>
+      <pre><code># quick path
+curl -fL -o roxy https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-linux
+chmod +x roxy
+mkdir -p ~/.local/bin &amp;&amp; mv roxy ~/.local/bin/roxy
+roxy</code></pre>
+      <p style="color:var(--dim);font-size:14px">Data lives in <code>~/.config/roxy/</code>.</p>
+    </div>
+  </section>
+
+  <section class="block" id="first-run">
+    <div class="wrap">
+      <div class="eyebrow">First run</div>
+      <h2>What happens when ROXY starts</h2>
+      <p class="section-lede">The loader checks your machine, restores sessions, and looks for update and gateway state. Then you land in a chat with one empty session.</p>
+      <div class="grid-3">
+        <div class="card"><h3>1 · Connect a model</h3><p>Models → <b>API models</b> for a key-based provider, or <b>CLI agents</b> to install Codex, Claude Code, Gemini CLI and friends.</p></div>
+        <div class="card"><h3>2 · Pick it in the composer</h3><p>The model button above the message box opens a searchable picker grouped by provider.</p></div>
+        <div class="card"><h3>3 · Switch whenever</h3><p>Pick another model mid-thread. The transcript is replayed, so context carries over.</p></div>
+      </div>
+      <div class="callout" style="margin-top:18px">
+        <b>ChatGPT / Codex sign-in.</b> Some agents need an interactive login. ROXY opens
+        your own terminal for that command — it never asks for your CLI password.
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="verify">
+    <div class="wrap">
+      <div class="eyebrow">Integrity</div>
+      <h2>Verify a download</h2>
+      <p class="section-lede">Every release publishes SHA-256 checksums. They catch a corrupted or swapped file; they do not replace a code signature.</p>
+      <h3>Windows (PowerShell)</h3>
+      <pre><code>Get-FileHash .\roxy-windows-x64.zip -Algorithm SHA256</code></pre>
+      <h3>Linux</h3>
+      <pre><code>sha256sum roxy-linux</code></pre>
+      <p style="color:var(--dim);font-size:14px">Compare the printed hash with the value on the release page or the bundled <code>SHA256SUMS.txt</code>. If they differ, do not run the file — download it again.</p>
+      <div class="callout" style="margin-top:16px">
+        <b>Why no publisher name?</b> Windows shows a verified publisher only for
+        signed binaries. A code-signing certificate is a paid, identity-verified
+        process; until ROXY ships signed builds, the checksum is the strongest
+        verification available.
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="update">
+    <div class="wrap">
+      <div class="eyebrow">Updates</div>
+      <h2>Updating ROXY</h2>
+      <p class="section-lede">
+        ROXY checks for a new release when it starts. If one exists, a window appears
+        with a live progress bar: it downloads, swaps the binary after ROXY closes, and
+        restarts. No terminal opens, and no manual download is needed.
+      </p>
+      <ul class="checks">
+        <li><b>Manual check:</b> Settings → About → Check for updates.</li>
+        <li><b>Requirements:</b> <code>curl</code> (built into Windows 10+, present on Linux) and write access to ROXY's folder.</li>
+        <li><b>Portable install:</b> keep roxy.exe somewhere your user account can write, not <code>Program Files</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="troubleshoot">
+    <div class="wrap">
+      <div class="eyebrow">Troubleshooting</div>
+      <h2>If something goes wrong</h2>
+      <div style="margin-top:22px">
+        <details class="faq" open><summary>The window does not open</summary><p>On Linux, make sure you are in a graphical session and have an OpenGL driver. Running from a terminal shows the exact error. On Windows, extract the ZIP before running.</p></details>
+        <details class="faq"><summary>“Needs Node.js” when installing an agent</summary><p>Agent CLIs are npm packages. Install Node.js LTS, restart ROXY, then press Install again. 9Router has the same requirement.</p></details>
+        <details class="faq"><summary>Models list is empty for a provider</summary><p>Press <b>Refresh</b> in Models. For a local server, confirm it is running — 9Router listens on <code>localhost:20128</code>. A key-based provider needs a valid key before its <code>/models</code> endpoint answers.</p></details>
+        <details class="faq"><summary>The update downloads but nothing changes</summary><p>The updater needs write access to the folder holding the executable. Move ROXY out of a read-only location and retry from Settings → About.</p></details>
+        <details class="faq"><summary>Antivirus flags roxy.exe</summary><p>Reputation warnings are common for new unsigned binaries. Verify the checksum; if you would rather compile it yourself, the source and build steps are below.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="source">
+    <div class="wrap">
+      <div class="eyebrow">From source</div>
+      <h2>Build ROXY yourself</h2>
+      <p class="section-lede">Rust 1.80+ and a C toolchain. The Windows cross-build additionally needs <code>gcc-mingw-w64-x86-64</code>.</p>
+      <pre><code>git clone https://github.com/RoaraxAli/ROXY.git
+cd ROXY
+
+# native build (Linux x86_64 / ARM64)
+cargo build --release
+./target/release/roxy
+
+# Windows x64 cross-compile from Linux
+rustup target add x86_64-pc-windows-gnu
+cargo build --release --target x86_64-pc-windows-gnu</code></pre>
+      <p style="color:var(--dim);font-size:14px">A self-hosted build can point the updater at its own manifest with <code>ROXY_MANIFEST=https://…/update.json cargo build --release</code>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div><div><b style="color:var(--text)">ROXY</b> — one session, every model.</div><div>Open source desktop AI client, built in Rust.</div></div>
+      <div><div style="color:var(--text);margin-bottom:8px">Product</div><div><a href="index.html">Overview</a></div><div><a href="docs.html">Docs</a></div></div>
+      <div><div style="color:var(--text);margin-bottom:8px">Project</div><div><a href="https://github.com/RoaraxAli/ROXY" rel="noopener">Source</a></div><div><a href="https://github.com/RoaraxAli/ROXY/issues" rel="noopener">Issues</a></div></div>
+    </div>
+    <div class="fine">ROXY · BUILT ON OPENCODE &amp; 9ROUTER · NO TELEMETRY</div>
+  </div>
+</footer>
+</body>
+</html>
