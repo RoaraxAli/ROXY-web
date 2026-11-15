@@ -16,7 +16,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
           <nav className="main">
             <Link href="/">Overview</Link>
             <Link href="/install">Install</Link>
-            <a href="https://roaraxali.github.io/ROXY-docs/" rel="noopener">Docs</a>
+            <a href="/docs" rel="noopener">Docs</a>
             <a href="https://github.com/RoaraxAli/ROXY" rel="noopener">Source</a>
             <Link href="/install" className="cta">Download</Link>
           </nav>
@@ -41,7 +41,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
               <div style={{ color: 'var(--text)', marginBottom: 8 }}>Product</div>
               <div><Link href="/">Overview</Link></div>
               <div><Link href="/install">Install</Link></div>
-              <div><a href="https://roaraxali.github.io/ROXY-docs/" rel="noopener">Docs</a></div>
+              <div><a href="/docs" rel="noopener">Docs</a></div>
             </div>
             <div>
               <div style={{ color: 'var(--text)', marginBottom: 8 }}>Project</div>

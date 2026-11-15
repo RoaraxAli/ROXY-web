@@ -12,7 +12,7 @@ export default function Home() {
           </p>
           <div className="actions">
             <a className="btn primary" href="/install">Download ROXY <span className="sub">v0.2.0</span></a>
-            <a className="btn" href="https://roaraxali.github.io/ROXY-docs/">Read the docs</a>
+            <a className="btn" href="/docs">Read the docs</a>
             <a className="btn" href="https://github.com/RoaraxAli/ROXY" rel="noopener">View source</a>
           </div>
           <div className="meta-line">WINDOWS x64 · LINUX ARM64 · ~8 MB · NO TELEMETRY · NO ACCOUNT</div>
@@ -67,12 +67,12 @@ export default function Home() {
             <div className="card">
               <h3>OpenCode</h3>
               <p>The agent runtime ROXY drives headlessly. Install it from <b>Models → CLI agents</b>; hosted API turns are routed through OpenCode&apos;s own configuration without touching your saved auth files.</p>
-              <p style={{ marginTop: 10 }}><a href="https://roaraxali.github.io/ROXY-docs/opencode/">How OpenCode integration works →</a></p>
+              <p style={{ marginTop: 10 }}><a href="/docs/opencode">How OpenCode integration works →</a></p>
             </div>
             <div className="card">
               <h3>9Router</h3>
               <p>A local router on <code>localhost:20128</code> that exposes 40+ providers behind one OpenAI-compatible endpoint. ROXY reads its model list and lets you rank it.</p>
-              <p style={{ marginTop: 10 }}><a href="https://roaraxali.github.io/ROXY-docs/router/">Model priority and fallback →</a></p>
+              <p style={{ marginTop: 10 }}><a href="/docs/router">Model priority and fallback →</a></p>
             </div>
           </div>
           <div className="callout" style={{ marginTop: 18 }}>
