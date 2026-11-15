@@ -6,10 +6,15 @@ import DocsLayout from './docs/layout'
 
 const DocsWrapper = getMDXComponents({}).wrapper
 
-export default async function Home() {
-  const host = (await headers()).get('host')?.split(':')[0]
+function isDocsHost(headerList: Headers) {
+  const host = headerList.get('x-forwarded-host') || headerList.get('host') || ''
+  return host.split(':')[0].toLowerCase() === 'docs.roxy.theali.app'
+}
 
-  if (host === 'docs.roxy.theali.app') {
+export default async function Home() {
+  const docsHost = isDocsHost(await headers())
+
+  if (docsHost) {
     const { default: MDXContent, toc, metadata, sourceCode } = await importPage([])
     return (
       <DocsLayout>
@@ -26,8 +31,8 @@ export default async function Home() {
 }
 
 export async function generateMetadata() {
-  const host = (await headers()).get('host')?.split(':')[0]
-  if (host === 'docs.roxy.theali.app') {
+  const docsHost = isDocsHost(await headers())
+  if (docsHost) {
     const { metadata } = await importPage([])
     return metadata
   }
