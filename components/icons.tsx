@@ -19,6 +19,7 @@ export const Layers = (p: P) => <Icon {...p}><path d="m12 2 10 5-10 5L2 7zM2 12l
 export const Lock = (p: P) => <Icon {...p}><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3" /></Icon>
 export const MessageSquare = (p: P) => <Icon {...p}><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" /></Icon>
 export const Moon = (p: P) => <Icon {...p}><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13" /></Icon>
+export const Sun = (p: P) => <Icon {...p}><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></Icon>
 export const MoreHorizontal = (p: P) => <Icon {...p}><circle cx="5" cy="12" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="19" cy="12" r="1" fill="currentColor"/></Icon>
 export const Plus = (p: P) => <Icon {...p}><path d="M12 5v14M5 12h14" /></Icon>
 export const Search = (p: P) => <Icon {...p}><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" /></Icon>

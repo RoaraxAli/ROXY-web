@@ -2,6 +2,7 @@ import { Layout, Navbar } from 'nextra-theme-docs'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { Logo } from '../../components/icons'
+import { ThemeToggle } from '../../components/theme-toggle'
 
 
 export default async function DocsLayout({ children }: { children: React.ReactNode }) {
@@ -14,6 +15,7 @@ export default async function DocsLayout({ children }: { children: React.ReactNo
               <Logo />
               <span className="docs-wordmark-divider">/</span>
               <span>Docs</span>
+              <ThemeToggle />
             </span>
           }
           projectLink="https://github.com/Roarax/ROXY"

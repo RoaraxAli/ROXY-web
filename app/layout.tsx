@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { headers } from 'next/headers'
 import localFont from 'next/font/local'
 
@@ -24,8 +25,8 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: { card: 'summary_large_image', title: 'ROXY — Your models. One conversation.', description: 'The open AI workspace. Every model, one continuous conversation.', ...docsHost ? {} : { images: ['/og.svg'] } },
   }
 }
-export const viewport: Viewport = { themeColor: '#090a09', colorScheme: 'dark' }
+export const viewport: Viewport = { themeColor: '#0a0a0a', colorScheme: 'dark light' }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning><body>{children}</body></html>
+  return <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning><body><Script id="roxy-theme" src="/theme-init.js" strategy="beforeInteractive" />{children}</body></html>
 }

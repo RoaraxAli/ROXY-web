@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { ArrowUpRight, Github, Logo } from '../../components/icons'
+import { ThemeToggle } from '../../components/theme-toggle'
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return <div className="marketing-shell">
     <header className="site"><div className="wrap bar">
       <Link href="/" className="brand" aria-label="ROXY home"><Logo /></Link>
       <nav className="main" aria-label="Main navigation"><a href="/#product">Product</a><a href="/#routing">Routing</a><a href="/#open-source">Open source</a><a href="https://docs.roxy.theali.app">Docs</a></nav>
-      <div className="header-actions"><a className="github-link" href="https://github.com/RoaraxAli/ROXY" aria-label="ROXY on GitHub"><Github size={18} /></a><Link href="/install" className="nav-download">Download <span>↗</span></Link></div>
+      <div className="header-actions"><ThemeToggle /><a className="github-link" href="https://github.com/RoaraxAli/ROXY" aria-label="ROXY on GitHub"><Github size={18} /></a><Link href="/install" className="nav-download">Download <span>↗</span></Link></div>
     </div></header>
     <main>{children}</main>
     <footer className="site"><div className="wrap">
