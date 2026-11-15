@@ -1,5 +1,5 @@
 import { headers } from 'next/headers'
-import { redirect } from 'next/navigation'
+export const dynamic = 'force-dynamic'
 import { importPage } from 'nextra/pages'
 import { useMDXComponents as getMDXComponents } from '../mdx-components'
 import DocsLayout from './docs/layout'
