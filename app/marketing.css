@@ -664,6 +664,7 @@ html[data-theme='light'] .marketing-shell .btn-primary:hover { background: #3030
 .install-group { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
 .install-group:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
 .group-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+.group-head svg { color: var(--text-soft); align-self: center; }
 .group-head h2 { margin: 0; font-size: 24px; letter-spacing: -0.03em; font-weight: 560; }
 .group-lede { margin: 0 0 0 auto; font-size: 12.5px; color: var(--muted); }
 

@@ -1,5 +1,9 @@
 import { Download, Github, Shield, Terminal, ChevronDown, ArrowUpRight, Cpu, Globe } from '../components/icons'
 
+const WinLogo = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.45H0m10.95-9.6L24 0v11.4H10.95M0 12.6h9.75v9.45L0 20.699M10.95 12.6H24V24l-12.9-1.8" /></svg>
+const MacLogo = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" /></svg>
+const LinuxLogo = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.227.333-3.106 3.42-3.106 3.42s.294-.353.886-.788c.48-.354 1.038-.58 1.62-.696.148-.029.27-.044.36-.05.14-.01.25.01.32.08.09.09.1.23.03.4-.07.17-.2.34-.35.5-.09.09-.18.17-.27.24-.99.78-2.2 1.4-2.78 2.45-.45.8-.68 1.7-.68 2.67 0 .3.02.6.06.9-.96-.05-1.8.1-2.46.5-.98.6-1.5 1.5-1.5 2.5 0 .42.08.83.23 1.2-.4.25-.7.58-.9.98-.35.7-.4 1.5-.1 2.2.3.7.9 1.2 1.7 1.4.1.03.2.05.3.07-.1.4-.1.8 0 1.2.15.6.5 1.1 1 1.4.5.3 1.1.4 1.7.3.4-.07.8-.2 1.1-.4.25.35.6.6 1 .75.5.2 1.1.2 1.6.05.3-.1.6-.25.8-.45.2.3.5.55.85.7.5.2 1.1.2 1.6 0 .35-.15.65-.35.9-.6.2.25.45.45.75.6.55.25 1.2.25 1.7 0 .35-.15.65-.4.85-.7.25.2.55.35.9.45.6.15 1.2.05 1.7-.2.45-.25.8-.6 1-1.05.1-.2.15-.4.18-.6.6-.1.95-.4 1.15-.9.25-.6.25-1.3-.05-1.9-.2-.4-.5-.7-.85-.9.15-.35.25-.75.25-1.15 0-1 .5-1.9 1.5-2.5.6-.35 1.4-.45 2.3-.4.04-.3.06-.6.06-.9 0-.95-.23-1.85-.68-2.65-.58-1.05-1.79-1.67-2.78-2.45-.09-.07-.18-.15-.27-.24-.15-.16-.28-.33-.35-.5-.07-.17-.06-.31.03-.4.07-.07.18-.09.32-.08.09.006.212.021.36.05.582.116 1.14.342 1.62.696.592.435.886.788.886.788s1.121-3.087-3.106-3.42c-.165-.013-.325-.021-.48-.021z" /></svg>
+
 const WINDOWS = [
   { arch: 'x64', format: 'Portable ZIP', href: 'https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-windows-x64.zip', alt: 'https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy.exe', note: 'Windows 10 (1809+) or 11, 64-bit. No admin rights.' },
   { arch: 'ARM64', format: 'Portable ZIP', href: 'https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-windows-arm64.zip', alt: 'https://github.com/RoaraxAli/ROXY/releases/latest/download/roxy-arm64.exe', note: 'Windows 11 on ARM devices (Surface Pro X, Snapdragon laptops).' },
@@ -40,7 +44,7 @@ export default function InstallContent() {
     </header>
 
     <section className="install-group">
-      <div className="group-head"><span className="mono-label">Windows</span><h2>Windows</h2></div>
+      <div className="group-head"><WinLogo /><span className="mono-label">Windows</span><h2>Windows</h2></div>
       <div className="build-grid">
         {WINDOWS.map(({ arch, format, href, alt, note }) => (
           <article className="build-card" key={arch}>
@@ -57,7 +61,7 @@ export default function InstallContent() {
     </section>
 
     <section className="install-group">
-      <div className="group-head"><span className="mono-label">macOS</span><h2>macOS</h2></div>
+      <div className="group-head"><MacLogo /><span className="mono-label">macOS</span><h2>macOS</h2></div>
       <div className="build-grid">
         {MACOS.map(({ arch, format, href, note }) => (
           <article className="build-card" key={arch}>
@@ -71,7 +75,7 @@ export default function InstallContent() {
     </section>
 
     <section className="install-group">
-      <div className="group-head"><span className="mono-label">Linux</span><h2>Linux</h2><p className="group-lede">Choose the package format your distribution prefers.</p></div>
+      <div className="group-head"><LinuxLogo /><span className="mono-label">Linux</span><h2>Linux</h2><p className="group-lede">Choose the package format your distribution prefers.</p></div>
       <div className="linux-matrix">
         <div className="matrix-col">
           <p className="mono-label">.deb — Debian / Ubuntu</p>
