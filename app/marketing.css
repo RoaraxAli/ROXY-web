@@ -383,6 +383,73 @@
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
+/* ---- install page ------------------------------------------------------ */
+
+.install-page { padding-block: 64px 0; }
+
+.install-head { max-width: 720px; margin-bottom: 44px; }
+.install-head h1 { margin: 16px 0 0; font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.05em; font-weight: 560; }
+.install-lede { margin: 16px 0 0; max-width: 58ch; font-size: 14.5px; line-height: 1.78; color: var(--muted); text-wrap: pretty; }
+
+.build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--line); padding-top: 32px; }
+.build-card { display: flex; flex-direction: column; gap: 12px; padding: 20px 20px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.build-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.build-top .mono-label { margin-bottom: 6px; }
+.build-top h3 { margin: 0; font-size: 22px; font-weight: 560; letter-spacing: -0.03em; }
+.build-arch { color: var(--muted); font-weight: 420; }
+.build-format { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-dim); padding: 4px 7px; border: 1px solid var(--line); border-radius: 5px; white-space: nowrap; }
+.build-note { margin: 0; font-size: 11.5px; line-height: 1.65; color: var(--muted); flex: 1; }
+.build-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.build-actions .btn { min-height: 38px; font-size: 12.5px; }
+.build-alt { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--muted); border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; transition: color 0.18s ease, border-color 0.18s ease; }
+.build-alt:hover { color: var(--text); border-color: var(--text); }
+.build-version { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--muted-dim); }
+
+.install-note { display: flex; gap: 14px; align-items: flex-start; margin: 40px 0 0; padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.install-note svg { flex-shrink: 0; margin-top: 2px; color: var(--text-soft); }
+.install-note p { margin: 0; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.install-note b { color: var(--text-soft); font-weight: 560; }
+.install-note a { color: var(--text-soft); border-bottom: 1px solid var(--line-strong); }
+
+.install-steps { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 40px; }
+.install-steps h2 { margin: 0 0 26px; font-size: 24px; letter-spacing: -0.03em; font-weight: 560; }
+.step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.step-grid > div { padding: 0 22px 0 0; border-right: 1px solid var(--line); }
+.step-grid > div:last-child { border-right: 0; padding-right: 0; }
+.step-grid .mono-label { display: block; margin-bottom: 10px; }
+.step-grid h3 { margin: 0 0 8px; font-size: 14px; font-weight: 560; }
+.step-grid p { margin: 0; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.step-grid code { font-size: 11px; padding: 1px 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg-sunk); }
+
+.install-details { margin-top: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+.install-details + .install-details { margin-top: 12px; }
+.install-details summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; cursor: pointer; list-style: none; font-size: 13px; color: var(--text-soft); font-weight: 520; }
+.install-details summary::-webkit-details-marker { display: none; }
+.install-details summary span { display: flex; align-items: center; gap: 10px; }
+.install-details[open] summary { border-bottom: 1px solid var(--line); }
+.install-details pre { margin: 0; padding: 16px 18px; font-family: var(--font-mono), monospace; font-size: 11.5px; line-height: 1.75; color: var(--text-soft); background: var(--bg-sunk); overflow-x: auto; }
+.install-details p { margin: 12px 18px 16px; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.install-details ul { margin: 0 18px 16px; padding-left: 18px; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.install-details code { font-size: 11px; padding: 1px 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg-sunk); color: var(--text-soft); }
+.install-details a { color: var(--text-soft); border-bottom: 1px solid var(--line-strong); }
+
+.build-source { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
+.build-source h2 { margin: 10px 0 10px; font-size: 24px; letter-spacing: -0.03em; font-weight: 560; }
+.build-source p { margin: 0 0 18px; font-size: 13px; line-height: 1.78; color: var(--muted); }
+
+@media (max-width: 1080px) {
+  .build-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .step-grid > div { border-right: 0; border-top: 1px solid var(--line); padding: 18px 0 18px; }
+  .step-grid > div:first-child { border-top: 0; padding-top: 0; }
+  .build-source { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+
+@media (max-width: 700px) {
+  .build-grid { grid-template-columns: minmax(0, 1fr); }
+  .install-head h1 { font-size: 30px; }
+}
+
 @media (max-width: 560px) {
   .marketing-shell .wrap { width: calc(100% - 32px); }
   .marketing-shell .bar { height: 60px; gap: 14px; }
@@ -517,6 +584,73 @@ html[data-theme='light'] .marketing-shell .btn-primary:hover { background: #3030
   .user-message { max-width: 88%; }
   .conversation-header { padding-inline: 15px; height: 46px; }
   .composer-wrap { padding: 9px 12px 11px; }
+}
+
+/* ---- install page ------------------------------------------------------ */
+
+.install-page { padding-block: 64px 0; }
+
+.install-head { max-width: 720px; margin-bottom: 44px; }
+.install-head h1 { margin: 16px 0 0; font-size: clamp(34px, 4.6vw, 58px); line-height: 1.02; letter-spacing: -0.05em; font-weight: 560; }
+.install-lede { margin: 16px 0 0; max-width: 58ch; font-size: 14.5px; line-height: 1.78; color: var(--muted); text-wrap: pretty; }
+
+.build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; border-top: 1px solid var(--line); padding-top: 32px; }
+.build-card { display: flex; flex-direction: column; gap: 12px; padding: 20px 20px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.build-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.build-top .mono-label { margin-bottom: 6px; }
+.build-top h3 { margin: 0; font-size: 22px; font-weight: 560; letter-spacing: -0.03em; }
+.build-arch { color: var(--muted); font-weight: 420; }
+.build-format { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-dim); padding: 4px 7px; border: 1px solid var(--line); border-radius: 5px; white-space: nowrap; }
+.build-note { margin: 0; font-size: 11.5px; line-height: 1.65; color: var(--muted); flex: 1; }
+.build-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.build-actions .btn { min-height: 38px; font-size: 12.5px; }
+.build-alt { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--muted); border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; transition: color 0.18s ease, border-color 0.18s ease; }
+.build-alt:hover { color: var(--text); border-color: var(--text); }
+.build-version { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--muted-dim); }
+
+.install-note { display: flex; gap: 14px; align-items: flex-start; margin: 40px 0 0; padding: 20px 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.install-note svg { flex-shrink: 0; margin-top: 2px; color: var(--text-soft); }
+.install-note p { margin: 0; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.install-note b { color: var(--text-soft); font-weight: 560; }
+.install-note a { color: var(--text-soft); border-bottom: 1px solid var(--line-strong); }
+
+.install-steps { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 40px; }
+.install-steps h2 { margin: 0 0 26px; font-size: 24px; letter-spacing: -0.03em; font-weight: 560; }
+.step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.step-grid > div { padding: 0 22px 0 0; border-right: 1px solid var(--line); }
+.step-grid > div:last-child { border-right: 0; padding-right: 0; }
+.step-grid .mono-label { display: block; margin-bottom: 10px; }
+.step-grid h3 { margin: 0 0 8px; font-size: 14px; font-weight: 560; }
+.step-grid p { margin: 0; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.step-grid code { font-size: 11px; padding: 1px 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg-sunk); }
+
+.install-details { margin-top: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+.install-details + .install-details { margin-top: 12px; }
+.install-details summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; cursor: pointer; list-style: none; font-size: 13px; color: var(--text-soft); font-weight: 520; }
+.install-details summary::-webkit-details-marker { display: none; }
+.install-details summary span { display: flex; align-items: center; gap: 10px; }
+.install-details[open] summary { border-bottom: 1px solid var(--line); }
+.install-details pre { margin: 0; padding: 16px 18px; font-family: var(--font-mono), monospace; font-size: 11.5px; line-height: 1.75; color: var(--text-soft); background: var(--bg-sunk); overflow-x: auto; }
+.install-details p { margin: 12px 18px 16px; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.install-details ul { margin: 0 18px 16px; padding-left: 18px; font-size: 12.5px; line-height: 1.78; color: var(--muted); }
+.install-details code { font-size: 11px; padding: 1px 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg-sunk); color: var(--text-soft); }
+.install-details a { color: var(--text-soft); border-bottom: 1px solid var(--line-strong); }
+
+.build-source { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--line); }
+.build-source h2 { margin: 10px 0 10px; font-size: 24px; letter-spacing: -0.03em; font-weight: 560; }
+.build-source p { margin: 0 0 18px; font-size: 13px; line-height: 1.78; color: var(--muted); }
+
+@media (max-width: 1080px) {
+  .build-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .step-grid > div { border-right: 0; border-top: 1px solid var(--line); padding: 18px 0 18px; }
+  .step-grid > div:first-child { border-top: 0; padding-top: 0; }
+  .build-source { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+
+@media (max-width: 700px) {
+  .build-grid { grid-template-columns: minmax(0, 1fr); }
+  .install-head h1 { font-size: 30px; }
 }
 
 @media (max-width: 560px) {
