@@ -658,3 +658,37 @@ html[data-theme='light'] .marketing-shell .btn-primary:hover { background: #3030
   .code-snippet pre { font-size: 7.5px; }
   .window-title { font-size: 9px; }
 }
+
+/* ---- install groups --------------------------------------------------- */
+
+.install-group { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+.install-group:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.group-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; flex-wrap: wrap; }
+.group-head h2 { margin: 0; font-size: 24px; letter-spacing: -0.03em; font-weight: 560; }
+.group-lede { margin: 0 0 0 auto; font-size: 12.5px; color: var(--muted); }
+
+.linux-matrix { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.matrix-col { background: var(--bg); padding: 18px 18px 16px; }
+.matrix-col .mono-label { display: block; margin-bottom: 12px; }
+.matrix-rows { display: flex; flex-direction: column; gap: 6px; }
+.matrix-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 11px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--text-soft); font-size: 12px; font-weight: 520; transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease; }
+.matrix-row:hover { border-color: var(--line-strong); color: var(--text); background: var(--surface-raised); }
+.matrix-row span { font-family: var(--font-mono), monospace; font-size: 11px; }
+
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pkg-card { display: flex; flex-direction: column; gap: 12px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.pkg-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pkg-badge { font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-dim); padding: 3px 7px; border: 1px solid var(--line); border-radius: 5px; }
+.pkg-card pre { margin: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--bg-sunk); font-family: var(--font-mono), monospace; font-size: 12px; color: var(--text-soft); overflow-x: auto; }
+.pkg-note { margin: 0; font-size: 11.5px; line-height: 1.65; color: var(--muted); }
+.pkg-note code { font-size: 10.5px; padding: 1px 4px; border: 1px solid var(--line); border-radius: 4px; background: var(--bg-sunk); color: var(--text-soft); }
+
+@media (max-width: 1080px) {
+  .linux-matrix { grid-template-columns: repeat(2, 1fr); }
+  .pkg-grid { grid-template-columns: minmax(0, 1fr); }
+  .group-lede { margin: 8px 0 0; }
+}
+
+@media (max-width: 700px) {
+  .linux-matrix { grid-template-columns: minmax(0, 1fr); }
+}
