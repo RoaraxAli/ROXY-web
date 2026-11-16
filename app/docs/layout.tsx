@@ -37,6 +37,7 @@ export default async function DocsLayout({ children }: { children: React.ReactNo
         link: 'https://github.com/RoaraxAli/roxy-web/issues/new',
       }}
       toc={{ backToTop: true, title: 'On this page' }}
+      nextThemes={{ attribute: 'class', defaultTheme: 'dark', storageKey: 'roxy-theme' }}
       navigation={false}
     >
       {children}

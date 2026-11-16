@@ -31,6 +31,9 @@ body:has(.nextra-navbar) {
   font-size: 14px;
 }
 
+html.dark:has(.nextra-navbar) { background: #0a0a0a; }
+html.dark:has(.nextra-navbar) body { background: #0a0a0a; color: var(--docs-text-soft); }
+
 /* ---- navbar ----------------------------------------------------------- */
 
 .nextra-navbar { border-bottom: 1px solid var(--docs-line); }

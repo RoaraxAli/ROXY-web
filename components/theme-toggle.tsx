@@ -32,7 +32,7 @@ export function ThemeToggle() {
     root.classList.add(next)
     try {
       localStorage.setItem('roxy-theme', next)
-      // Shared with next-themes so the docs subdomain opens in the same theme.
+      // Nextra's next-themes uses this key for its live switch.
       localStorage.setItem('theme', next)
     } catch {}
   }

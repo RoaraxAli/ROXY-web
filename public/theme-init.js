@@ -2,7 +2,7 @@
   try {
     // Read either key so the marketing shell and Nextra docs agree on one theme.
     const saved = localStorage.getItem('roxy-theme') || localStorage.getItem('theme')
-    const theme = saved === 'light' ? 'light' : 'dark'
+    const theme = saved === 'light' || document.documentElement.classList.contains('light') ? 'light' : 'dark'
     const root = document.documentElement
     root.dataset.theme = theme
     root.style.colorScheme = theme
